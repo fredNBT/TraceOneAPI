@@ -5,6 +5,9 @@
 // Variables
 @import 'variables';
 
+//imports Customstyle.scss into app css
+@import 'customstyle';
+
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
