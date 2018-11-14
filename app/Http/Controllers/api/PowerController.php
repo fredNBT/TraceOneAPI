@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use DB;
 
 
 
@@ -17,7 +18,8 @@ class PowerController extends Controller
      */
     public function index()
     {
-        return 'steve';
+        $users = DB::select('SELECT TOP (100) * FROM PowerUsage');
+        return '$users';
     }
 
     /**
