@@ -19,7 +19,8 @@ class PowerController extends Controller
     public function index()
     {
         $users = DB::select('SELECT TOP (100) * FROM PowerUsage');
-        return '$users';
+        
+        return $users;
     }
 
     /**
