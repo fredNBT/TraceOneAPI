@@ -14,3 +14,4 @@
 Route::get('/', function () {
     return view('homepage.home');
 });
+Route::get('/algo', 'AlgoController@index');
