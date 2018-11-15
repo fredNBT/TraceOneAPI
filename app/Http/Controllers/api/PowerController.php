@@ -53,7 +53,7 @@ class PowerController extends Controller
     public function show($id)
     {
        
-        $users = DB::select("SELECT TOP (500)  [Time],[Total] FROM PowerUsage where House =  '" .$id. "'");
+        $users = DB::select("SELECT TOP (10)  [Time],[Total] FROM PowerUsage where House =  '" .$id. "'");
        return $users;
     }
 
