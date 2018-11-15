@@ -12,6 +12,19 @@ class AlgoController extends Controller
         $this->powerneeded(5,1,6);
         $this->powerneeded(5,4,3);
         $this->powerneeded(5,1,3);
+
+        
+        // create curl resource
+        $ch = curl_init();
+        // set url 
+        curl_setopt($ch, CURLOPT_URL, "http://traceoneapi.azurewebsites.net/api/power/house2");
+        // $output contains the output json
+        $output = curl_exec($ch);
+        // close curl resource to free up system resources 
+        curl_close($ch);
+        // {"name":"Baron","gender":"male","probability":0.88,"count":26}
+        var_dump(json_decode($output, true));
+
         return view('index');
     }
 
