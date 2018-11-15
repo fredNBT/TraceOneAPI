@@ -16,15 +16,13 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('power', 'Api\PowerController@show');
+Route::resource('power', 'Api\PowerController');
 
 Route::get('Api\PowerController{id}', [
     'ID' => 'Api\PowerController@show'
 ]);
 
-Route::get('Api\PowerController{time}', [
-    'time' => 'Api\PowerController@map'
-]);
+
 
 
 
