@@ -18,7 +18,7 @@ class PowerController extends Controller
      */
     public function index()
     {
-        $users = DB::select('SELECT TOP (100) * FROM PowerUsage');
+        $users = DB::select('SELECT TOP (1000) * FROM PowerUsage');
         
         return $users;
     }
@@ -54,9 +54,14 @@ class PowerController extends Controller
     {
        
         $users = DB::select("SELECT TOP (500)  [Time],[Total] FROM PowerUsage where House =  '" .$id. "'");
-        
-        return $users;
-       
+       return $users;
+    }
+
+    public function map($time)
+    {
+
+      $CurrentPowerUsage = DB::select(" select * from PowerUsage where [time] = '" .$time. "' and [Date] = '2007-01-01'");
+      return $CurrentPowerUsage;
     }
 
     /**
