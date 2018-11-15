@@ -8,39 +8,11 @@ use Illuminate\Http\Request;
 class AlgoController extends Controller
 { 
     function index()
-    {   global $_distArr;
-        $_distArr = array();
-        $_distArr[1][2] = 7;
-        $_distArr[1][3] = 9;
-        $_distArr[1][6] = 14;
-        $_distArr[2][1] = 7;
-        $_distArr[2][3] = 10;
-        $_distArr[2][4] = 15;
-        $_distArr[3][1] = 9;
-        $_distArr[3][2] = 10;
-        $_distArr[3][4] = 11;
-        $_distArr[3][6] = 2;
-        $_distArr[4][2] = 15;
-        $_distArr[4][3] = 11;
-        $_distArr[4][5] = 6;
-        $_distArr[5][4] = 6;
-        $_distArr[5][6] = 9;
-        $_distArr[6][1] = 14;
-        $_distArr[6][3] = 2;
-        $_distArr[6][5] = 9;
-
-
-
-        $path = $this->runalgo($_distArr,1,6);
-        $this->updateDistance($path,$_distArr);
-        $path = $this->runalgo($_distArr,4,1);
-        $this->updateDistance($path,$_distArr);
-        $path = $this->runalgo($_distArr,2,5);
-        $this->updateDistance($path,$_distArr);
-        $path = $this->runalgo($_distArr,1,2);
-        $this->updateDistance($path,$_distArr);
-
-        return view('index') -> with('array',$_distArr);
+    {  
+        $this->powerneeded(5,1,6);
+        $this->powerneeded(5,4,3);
+        $this->powerneeded(5,1,3);
+        return view('index');
     }
 
     public static function updateDistance($path,&$_distArr){
@@ -66,6 +38,7 @@ class AlgoController extends Controller
                 }
             }
         };
+        return $_distArr;
     }
 
     public static function runalgo($_distArr,$a,$b){
@@ -107,6 +80,39 @@ class AlgoController extends Controller
         echo "<br>";
 
         return $path;
+    }
+
+    public function powerneeded($power,$a,$b)
+    {
+        global $_distArr;
+        $_distArr = array();
+        $_distArr[1][2] = 7;
+        $_distArr[1][3] = 9;
+        $_distArr[1][6] = 14;
+        $_distArr[2][1] = 7;
+        $_distArr[2][3] = 10;
+        $_distArr[2][4] = 15;
+        $_distArr[3][1] = 9;
+        $_distArr[3][2] = 10;
+        $_distArr[3][4] = 11;
+        $_distArr[3][6] = 2;
+        $_distArr[4][2] = 15;
+        $_distArr[4][3] = 11;
+        $_distArr[4][5] = 6;
+        $_distArr[5][4] = 6;
+        $_distArr[5][6] = 9;
+        $_distArr[6][1] = 14;
+        $_distArr[6][3] = 2;
+        $_distArr[6][5] = 9;
+
+        $check = true;
+
+        for( $i = 0; $i < $power; $i++ )
+        {
+            $path = $this->runalgo($_distArr,$a,$b);
+            $this->updateDistance($path,$_distArr); 
+        }
+        var_dump($_distArr);
     }
 
 }
