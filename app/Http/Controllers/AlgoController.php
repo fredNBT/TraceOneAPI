@@ -9,26 +9,33 @@ class AlgoController extends Controller
 { 
     function index()
     {  
-        $this->powerneeded(5,1,6);
-        $this->powerneeded(5,4,3);
-        $this->powerneeded(5,1,3);
 
         
-        // create curl resource
-        $ch = curl_init();
-        // set url 
-        curl_setopt($ch, CURLOPT_URL, "http://traceoneapi.azurewebsites.net/api/power/house2");
-        // $output contains the output json
-        $output = curl_exec($ch);
-        // close curl resource to free up system resources 
-        curl_close($ch);
-        // {"name":"Baron","gender":"male","probability":0.88,"count":26}
-        var_dump(json_decode($output, true));
+        //$this->datasorter();
+       
 
+        //$this->runtransaction(5,1,6);
+        // $this->runtransaction(5,4,3);
+        // $this->runtransaction(5,1,3);
+
+        
+        // // create curl resource
+        // $ch = curl_init();
+        // // set url 
+        // curl_setopt($ch, CURLOPT_URL, "http://traceoneapi.azurewebsites.net/api/power/house2");
+        // // $output contains the output json
+        // $output = curl_exec($ch);
+        // // close curl resource to free up system resources 
+        // curl_close($ch);
+        // // {"name":"Baron","gender":"male","probability":0.88,"count":26}
+        // var_dump(json_decode($output, true));
+      
+        
         return view('index');
     }
 
     public static function updateDistance($path,&$_distArr){
+        $lol = array_pop($path);
         for( $i = 0; $i < count($path)-1; $i++ )
             {
             $path1 = $path[$i];              //defining path1 & path11 to 1st and 2nd values of $path array
@@ -85,17 +92,22 @@ class AlgoController extends Controller
         $path[] = $a;
         $path = array_reverse($path);
 
-        
+        $length = $S[$b][1];
         //print result
-        echo "<br />From $a to $b";
-        echo "<br />The length is ".$S[$b][1];
+        /* echo "<br />From $a to $b";
+        echo "<br />The length is ".$length;
         echo "<br />Path is ".implode('->', $path);
-        echo "<br>";
+        echo "<br>"; */
 
-        return $path;
+        $result = $path;
+        array_push($result,$length);
+
+
+        return $result;
+        
     }
 
-    public function powerneeded($power,$a,$b)
+    public function runtransaction($power,$a,$b)
     {
         global $_distArr;
         $_distArr = array();
@@ -118,14 +130,84 @@ class AlgoController extends Controller
         $_distArr[6][3] = 2;
         $_distArr[6][5] = 9;
 
-        $check = true;
-
+       
+        if ($power > 0 )
         for( $i = 0; $i < $power; $i++ )
         {
             $path = $this->runalgo($_distArr,$a,$b);
+            $lol = array_pop($path);
+            var_dump($path);
             $this->updateDistance($path,$_distArr); 
+            var_dump($_distArr);
         }
-        var_dump($_distArr);
+        
     }
 
+    public function datasorter()
+    {
+        global $_distArr;
+        $_distArr = array();
+        $_distArr[1][2] = 7;
+        $_distArr[1][3] = 9;
+        $_distArr[1][6] = 14;
+        $_distArr[2][1] = 7;
+        $_distArr[2][3] = 10;
+        $_distArr[2][4] = 15;
+        $_distArr[3][1] = 9;
+        $_distArr[3][2] = 10;
+        $_distArr[3][4] = 11;
+        $_distArr[3][6] = 2;
+        $_distArr[4][2] = 15;
+        $_distArr[4][3] = 11;
+        $_distArr[4][5] = 6;
+        $_distArr[5][4] = 6;
+        $_distArr[5][6] = 9;
+        $_distArr[6][1] = 14;
+        $_distArr[6][3] = 2;
+        $_distArr[6][5] = 9;
+
+        $powerneeded = array(
+            1 =>1,
+            2 =>-2,
+            3 =>-2,
+            4 =>-1,
+            5 =>0,
+            6 =>1
+        );
+        $offerpower = array();
+        $bidpower = array();
+        $pricearray = array();
+
+        foreach ($powerneeded as $key => $power) //splitting power into offers and bids
+        {
+            if ($power > 0)
+            {
+                $offerpower[$key] = $power;
+            }
+             else if($power < 0)
+            {
+                $bidpower[$key] = abs($power);
+            } 
+        }
+        
+        foreach ($bidpower as $key => $bid)
+        {
+            foreach ($offerpower as $key1 => $offer)
+            {
+    
+               $price = $this->runalgo($_distArr,$key,$key1);
+               $price = array_pop($price);
+               var_dump($price);
+               $pricearray[$key1] = $price;
+               
+            }
+            $lowestprice = min($pricearray);
+            $lowestkey = array_keys($pricearray, $lowestprice)[0]; // key of the cheapest offer for each bid
+           
+            
+            $this->runtransaction($bid,$lowestkey,$key);
+
+        
+        }
+    }
 }

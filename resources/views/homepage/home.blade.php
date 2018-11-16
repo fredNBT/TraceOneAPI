@@ -75,8 +75,7 @@
     <script src="{{ asset('js/sigma.js-1.2.1/plugins/sigma.parsers.json/sigma.parsers.json.js') }}"></script>
     <script src="{{ asset('js/sigma.js-1.2.1/plugins/sigma.renderers.customShapes/shape-library.js') }}"></script>
     <script src="{{ asset('js/sigma.js-1.2.1/plugins/sigma.renderers.customShapes/sigma.renderers.customShapes.js') }}"></script>
-    <script src="{{ asset('js/sigma.js-1.2.1/plugins/sigma.layout.forceAtlas2/worker.js') }}"></script>
-    <script src="{{ asset('js/sigma.js-1.2.1/plugins/sigma.layout.forceAtlas2/supervisor.js') }}"></script>
+
 
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
   </head>
@@ -86,13 +85,16 @@
     <div id="container"></div>
     <div class="test">HI GUYS !</div>
 
-
-
-
-
- 
- 
- 
-    <script src="js/script.js"></script>
+    <script  >
+      sigma.parsers.json('js/data.json', {
+        renderer: {              
+          container: document.getElementById("container"),
+          type: 'canvas'
+      },
+      settings: {
+        defaultNodeColor: '#ec5148'
+      }
+      });     
+      </script>
  </body>
 </html>
