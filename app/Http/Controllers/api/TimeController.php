@@ -30,64 +30,29 @@ class TimeController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+ 
 
     public function show($time)
     {
+       // SELECT PowerUsage.Total, PowerUsage.House, SolarPanels.SolarPannels FROM PowerUsage INNER JOIN SolarPanels ON PowerUsage.House=SolarPanels.House where PowerUsage.DateTimeTest = '2007-01-01 00:00:00.000';
+        $Houses = DB::select( "SELECT PowerUsage.Total, PowerUsage.House, SolarPanels.SolarPannels FROM PowerUsage INNER JOIN SolarPanels ON PowerUsage.House=SolarPanels.House where PowerUsage.DateTimeTest = '" .$time. "'");
+        $Sun = DB::select("select * from ActualSolar where LocalTime = '" .$time. "'");
+      $i = 0; 
 
-      $CurrentPowerUsage = DB::select(" select * from PowerUsage where [time] = '" .$time. "' and [Date] = '2007-01-01'");
-      return $CurrentPowerUsage;
+      $Powermap = array();
+
+      
+      foreach ($Houses as $value){
+
+        $Powerproduced = ($Sun[0]->Power_MW_) * $Houses[$i]->SolarPannels;
+        
+        $Powermap[$Houses[$i]->House] = $Powerproduced - $Houses[$i]->Total; 
+        $i += 1;
+      }
+
+      return $Powermap;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
     
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-
     
 }
