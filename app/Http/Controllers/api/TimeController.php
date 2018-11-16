@@ -18,9 +18,6 @@ class TimeController extends Controller
      */
     public function index()
     {
-        $users = DB::select('SELECT TOP (1000) * FROM PowerUsage');
-        
-        return $users;
     }
 
     /**
@@ -51,7 +48,7 @@ class TimeController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function map($time)
+    public function show($time)
     {
 
       $CurrentPowerUsage = DB::select(" select * from PowerUsage where [time] = '" .$time. "' and [Date] = '2007-01-01'");

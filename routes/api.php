@@ -22,7 +22,11 @@ Route::get('Api\PowerController{id}', [
     'ID' => 'Api\PowerController@show'
 ]);
 
+Route::resource('time', 'Api\TimeController');
 
+Route::get('Api\TimeController{time}', [
+    'TIME' => 'Api\TimeController@show'
+]);
 
 
 
