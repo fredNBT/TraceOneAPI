@@ -21,6 +21,15 @@
    * return a shape-renderer/border-renderer
    * ----------
    */
+
+  var customDrawShape = function(shapeFunc) {
+    return function(node,x,y,size,color,context) {
+      context.fillStyle = color;
+      context.beginPath();
+      shapeFunc(node,x,y,size,context);
+      context.fill();
+    };
+  }
   var genericDrawShape = function(shapeFunc) {
     return function(node,x,y,size,color,context) {
       context.fillStyle = color;
@@ -70,7 +79,7 @@
   register("diamond",genericDrawShape(drawDiamond),genericDrawBorder(drawDiamond));
 
   var drawCross = function(node,x,y,size,context) {
-    var lineWeight = (node.cross && node.cross.lineWeight) || 5;
+    var lineWeight = (node.cross && node.cross.lineWeight) || 1;
     context.moveTo(x-size, y-lineWeight);
     context.lineTo(x-size, y+lineWeight);
     context.lineTo(x-lineWeight, y+lineWeight);
@@ -84,7 +93,7 @@
     context.lineTo(x-lineWeight, y-size);
     context.lineTo(x-lineWeight, y-lineWeight);
   }
-  register("cross",genericDrawShape(drawCross),genericDrawBorder(drawCross));
+  register("cross",customDrawShape(drawCross));
 
   var drawEquilateral = function(node,x,y,size,context) {
     var pcount = (node.equilateral && node.equilateral.numPoints) || 5;
@@ -145,6 +154,31 @@
   }
   register("pacman",drawPacman,null);
 
+
+  var drawHouse = function(node,x,y,size,context) {
+  
+    context.moveTo(x-1.5*size, y-0.4*size);
+    context.lineTo(x-0.2*size, y-1.5*size);
+    context.lineTo(x+1*size, y-0.4*size);
+    context.lineTo(x+1*size, y+1.4*size);
+    context.lineTo(x-1.5*size, y+1.4*size);
+
+    context.moveTo(x-2.0*size, y-0.3*size);
+    context.lineTo(x-0.2*size, y-1.8*size);
+    context.lineTo(x+1.5*size, y-0.3*size);
+    context.lineTo(x+1.7*size, y-0.6*size);
+    context.lineTo(x-0.2*size, y-2.3*size);
+    context.lineTo(x-2.2*size, y-0.6*size);
+  
+    context.moveTo(x-1.5*size, y-1.5*size);
+    context.lineTo(x-1.5*size, y-2.1*size);
+    context.lineTo(x-1.0*size, y-2.1*size);
+    context.lineTo(x-1.0*size, y-1.9*size);
+
+
+  }
+  register("house",customDrawShape(drawHouse));
+  
   /**
    * Exporting
    * ----------
@@ -158,5 +192,5 @@
     // Version
     version: '0.1'
   };
-
+console.log(this.ShapeLibrary);
 }).call(this);

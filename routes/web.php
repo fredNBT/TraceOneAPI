@@ -14,4 +14,12 @@
 Route::get('/', function () {
     return view('homepage.home');
 });
+<<<<<<< HEAD
 Route::get('/algo', 'AlgoController@index');
+=======
+
+
+Route::get('/1', function () {
+    return view('bla');
+});
+>>>>>>> sigma-changes

@@ -5,7 +5,7 @@
       "label": "node 1",
       "x": 0,
       "y": 0,
-      "size": 3
+      "size": 4
       
     },
     {
@@ -13,7 +13,7 @@
       "label": "node 2",
       "x": 2,
       "y": 0,
-      "size": 3
+      "size": 4
       
     },
     {
@@ -21,7 +21,7 @@
       "label": "node 3",
       "x": 1,
       "y": 1,
-      "size": 3
+      "size": 4
       
     },
     {
@@ -29,7 +29,7 @@
       "label": "node 4",
       "x": 1.5,
       "y": 1.5,
-      "size": 3
+      "size": 4
       
     },
     {
@@ -37,7 +37,7 @@
       "label": "node 5",
       "x": 2,
       "y": 2,
-      "size": 3
+      "size": 4
       
     },
     {
@@ -45,7 +45,7 @@
       "label": "node 6",
       "x": 0,
       "y": 2,
-      "size": 3
+      "size": 8
       
     }
 
@@ -58,7 +58,6 @@
       "source": "n0",
       "target": "n1",
       "size": 1
-      
     },
     {
       "id": "e1",
