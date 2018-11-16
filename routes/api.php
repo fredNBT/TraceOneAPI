@@ -26,3 +26,6 @@ Route::get('Api\PowerController{id}', [
 
 
 
+
+
+
