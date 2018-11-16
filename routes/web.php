@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('homepage.home');
 });
+
+
+Route::get('/1', function () {
+    return view('bla');
+});
