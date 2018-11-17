@@ -11,7 +11,7 @@ class AlgoController extends Controller
     {  
 
         
-        //$this->datasorter();
+        $this->datasorter();
        
 
         //$this->runtransaction(5,1,6);
@@ -34,8 +34,8 @@ class AlgoController extends Controller
         return view('index');
     }
 
-    public static function updateDistance($path,&$_distArr){
-        $lol = array_pop($path);
+    public static function updateDistance($path,&$_distArr)
+    {
         for( $i = 0; $i < count($path)-1; $i++ )
             {
             $path1 = $path[$i];              //defining path1 & path11 to 1st and 2nd values of $path array
@@ -46,7 +46,7 @@ class AlgoController extends Controller
 
             $x = $_distArr[$path1][$path11];  //cost between path1 & path11
             $x += exp((0.3*$x)-2);    // updating used paths (adding cost exponentially)
-            
+
             $_distArr[$path1][$path11] = $x;
 
             foreach($_distArr as &$value){       // foreach path that wasnt used
@@ -136,14 +136,13 @@ class AlgoController extends Controller
         {
             $path = $this->runalgo($_distArr,$a,$b);
             $lol = array_pop($path);
-            var_dump($path);
             $this->updateDistance($path,$_distArr); 
             var_dump($_distArr);
         }
         
     }
 
-    public function datasorter()
+    public function datasorter($powerneeded)
     {
         global $_distArr;
         $_distArr = array();
@@ -166,14 +165,14 @@ class AlgoController extends Controller
         $_distArr[6][3] = 2;
         $_distArr[6][5] = 9;
 
-        $powerneeded = array(
-            1 =>1,
-            2 =>-2,
-            3 =>-2,
-            4 =>-1,
-            5 =>0,
-            6 =>1
-        );
+       /*  $powerneeded = array(
+             1 =>5,
+             2 =>-5,
+             3 =>-6,
+             4 =>-1,
+             5 =>0,
+             6 =>1
+        ); */
         $offerpower = array();
         $bidpower = array();
         $pricearray = array();
@@ -189,25 +188,21 @@ class AlgoController extends Controller
                 $bidpower[$key] = abs($power);
             } 
         }
-        
+    
         foreach ($bidpower as $key => $bid)
         {
             foreach ($offerpower as $key1 => $offer)
             {
     
-               $price = $this->runalgo($_distArr,$key,$key1);
+               $price = $this->runalgo($_distArr,$key1,$key);
                $price = array_pop($price);
-               var_dump($price);
                $pricearray[$key1] = $price;
-               
             }
+
             $lowestprice = min($pricearray);
             $lowestkey = array_keys($pricearray, $lowestprice)[0]; // key of the cheapest offer for each bid
            
-            
             $this->runtransaction($bid,$lowestkey,$key);
-
-        
         }
     }
 }
