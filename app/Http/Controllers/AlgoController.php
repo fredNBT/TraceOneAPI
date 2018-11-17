@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use database\maps\map1;
 use Illuminate\Http\Request;
-use resources\Classes\PowerUsageTotals;
+include "../resources/Classes/PowerUsage.php"; 
 
 class AlgoController extends Controller
 { 
     function index()
     {  
-        $CurentPowerStats = new PowerUsageTotals;
+        $time = "2007-01-01 00:00:00.000";
+        echo "hello";
+        $CurentPowerStats = PowerUsage::show($time);
 
         var_dump($CurentPowerStats);
 
