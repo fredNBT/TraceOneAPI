@@ -28,6 +28,11 @@ Route::get('Api\TimeController{time}', [
     'TIME' => 'Api\TimeController@show'
 ]);
 
+Route::resource('SigmaJsSchema', 'Api\SigmaJsSchemaController');
+Route::get('Api\SigmaJsSchemaController{time}', [
+    'time' => 'Api\SigmaJsSchemaController@show'
+]);
+
 
 
 

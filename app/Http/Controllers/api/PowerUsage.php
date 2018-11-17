@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use DB;
 
- class PowerUsage
+class PowerUsage
 {
 
 public  function show($time)

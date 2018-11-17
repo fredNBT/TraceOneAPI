@@ -16,9 +16,9 @@
 </body>
 
 <script>
-    let LC = new LineChart();
-    LC.test();
-    LC.CreateLineChart();
+   // let LC = new LineChart();
+   // LC.test();
+   // LC.CreateLineChart();
 
 
     let timer = document.getElementById('timer');
@@ -82,7 +82,7 @@
     //Create the XHR Object
     let xhr = new XMLHttpRequest;
        //Call the open function, GET-type of request, url, true-asynchronous
-     xhr.open('GET', 'http://bootcamp/PHP/TraceOneAPI-master/public/api/time/' + start, true)
+     xhr.open('GET', 'http://bootcamp/PHP/TraceOneAPI-master/public/api/SigmaJsSchema/' + start, true)
        //call the onload 
        xhr.onload = function() 
            {

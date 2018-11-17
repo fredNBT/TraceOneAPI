@@ -10,33 +10,16 @@ class AlgoController extends Controller
 { 
     function index()
     {  
-        $time = "2007-01-01 00:00:00.000";
-        echo "hello";
-        $CurentPowerStats = PowerUsage::show($time);
+      //  $time = "2007-01-01 00:00:00.000";
+      //  echo "hello";
+      //  $CurentPowerStats = PowerUsage::show($time);
 
-        var_dump($CurentPowerStats);
+     //   var_dump($CurentPowerStats);
 
 
         
-        //$this->datasorter();
+       // $this->datasorter($CurentPowerStats);
        
-
-        //$this->runtransaction(5,1,6);
-        // $this->runtransaction(5,4,3);
-        // $this->runtransaction(5,1,3);
-
-        
-        // // create curl resource
-        // $ch = curl_init();
-        // // set url 
-        // curl_setopt($ch, CURLOPT_URL, "http://traceoneapi.azurewebsites.net/api/power/house2");
-        // // $output contains the output json
-        // $output = curl_exec($ch);
-        // // close curl resource to free up system resources 
-        // curl_close($ch);
-        // // {"name":"Baron","gender":"male","probability":0.88,"count":26}
-        // var_dump(json_decode($output, true));
-      
         
         return view('index');
     }
