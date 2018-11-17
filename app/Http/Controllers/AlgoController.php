@@ -4,14 +4,19 @@ namespace App\Http\Controllers;
 
 use database\maps\map1;
 use Illuminate\Http\Request;
+use resources\Classes\PowerUsageTotals;
 
 class AlgoController extends Controller
 { 
     function index()
     {  
+        $CurentPowerStats = new PowerUsageTotals;
+
+        var_dump($CurentPowerStats);
+
 
         
-        $this->datasorter();
+        //$this->datasorter();
        
 
         //$this->runtransaction(5,1,6);
