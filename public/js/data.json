@@ -5,7 +5,8 @@
       "label": "node 1",
       "x": 0,
       "y": 0,
-      "size": 4
+      "size": 10,
+      "type": "house"
       
     },
     {
@@ -13,7 +14,8 @@
       "label": "node 2",
       "x": 2,
       "y": 0,
-      "size": 4
+      "size": 10,
+      "type": "house"
       
     },
     {
@@ -21,7 +23,8 @@
       "label": "node 3",
       "x": 1,
       "y": 1,
-      "size": 4
+      "size": 10,
+      "type": "house"
       
     },
     {
@@ -29,7 +32,8 @@
       "label": "node 4",
       "x": 1.5,
       "y": 1.5,
-      "size": 4
+      "size": 10,
+      "type": "house"
       
     },
     {
@@ -37,7 +41,8 @@
       "label": "node 5",
       "x": 2,
       "y": 2,
-      "size": 4
+      "size": 10,
+      "type": "house"
       
     },
     {
@@ -45,7 +50,8 @@
       "label": "node 6",
       "x": 0,
       "y": 2,
-      "size": 8
+      "size": 10,
+      "type": "house"
       
     }
 
@@ -168,16 +174,17 @@
       "label": "fifteenth line",
       "source": "n3",
       "target": "n1",
-      "size": 1
+      "size": 1,
+      "type": "dotted"
 
     },
     {
-      "id": "e15",
+       "id": "e15",
       "label": "sixteenth line",
       "source": "n1",
       "target": "n3",
       "size": 1,
-      "type": "curvedArrow"
+      "type": "curvedArrow" 
     }
     
   ]

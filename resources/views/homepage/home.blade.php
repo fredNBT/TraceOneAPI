@@ -75,7 +75,10 @@
     <script src="{{ asset('js/sigma.js-1.2.1/plugins/sigma.parsers.json/sigma.parsers.json.js') }}"></script>
     <script src="{{ asset('js/sigma.js-1.2.1/plugins/sigma.renderers.customShapes/shape-library.js') }}"></script>
     <script src="{{ asset('js/sigma.js-1.2.1/plugins/sigma.renderers.customShapes/sigma.renderers.customShapes.js') }}"></script>
-
+    
+    <script src="{{ asset('js/sigma.js-1.2.1/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edgehovers.dashed.js') }}"></script>
+    <script src="{{ asset('js/sigma.js-1.2.1/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edges.dotted.js') }}"></script>
+    
 
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
   </head>
@@ -92,7 +95,7 @@
           type: 'canvas'
       },
       settings: {
-        defaultNodeColor: '#ec5148'
+        defaultNodeColor: '#0000FF'
       }
       });     
       </script>
