@@ -17,8 +17,8 @@ class SigmaJsSchemaController extends Controller
     {
     var_dump($time);
 
-    $steve = new \app\Classes\PowerUsage();
-
+    $steve = new \App\Classes\PowerUsage();
+    return $steve->show($time);
     return '$Bids';
     
     }
