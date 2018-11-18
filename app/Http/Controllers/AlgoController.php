@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use database\maps\map1;
 use Illuminate\Http\Request;
-include "../resources/Classes/PowerUsage.php"; 
+//use app\Classes\PowerUsage; 
+//use app\Classes\ShortestPath; 
 
 class AlgoController extends Controller
 { 
