@@ -10,18 +10,7 @@ use Illuminate\Http\Request;
 class AlgoController extends Controller
 { 
     function index()
-    {  
-      //  $time = "2007-01-01 00:00:00.000";
-      //  echo "hello";
-      //  $CurentPowerStats = PowerUsage::show($time);
-
-     //   var_dump($CurentPowerStats);
-
-
-        
-       // $this->datasorter($CurentPowerStats);
-       
-        
+    {          
         return view('index');
     }
 

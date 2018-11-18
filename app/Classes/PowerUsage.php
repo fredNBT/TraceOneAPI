@@ -8,12 +8,10 @@ use DB;
 
   public static  function show($time)
   {
-    /*
+    
      $Houses = DB::select( "SELECT PowerUsage.Total, PowerUsage.House, SolarPanels.SolarPannels FROM PowerUsage INNER JOIN SolarPanels ON PowerUsage.House=SolarPanels.House where PowerUsage.DateTimeTest = '" .$time. "'");
-    var_dump($Houses);
     
     $Sun = DB::select("select * from ActualSolar where LocalTime = '" .$time. "'");
-     var_dump($Sun); 
      $i = 0; 
     $Powermap = array();
     
@@ -23,9 +21,8 @@ use DB;
       $Powermap[$Houses[$i]->House] = $Powerproduced - $Houses[$i]->Total; 
       $i += 1; 
     }
-    return $Powermap;   */
+    return $Powermap;   
 
 
-    return "hi";
   }
 }

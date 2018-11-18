@@ -15,11 +15,15 @@ class SigmaJsSchemaController extends Controller
 {
     public function show($time)
     {
-    var_dump($time);
 
-    $steve = new \App\Classes\PowerUsage();
-    return $steve->show($time);
-    return '$Bids';
+    $CurrentPowerUsage = new \App\Classes\PowerUsage();
+
+    $ShortestPath = new \App\Classes\ShortestPath();
+
+    $PowerMap =  $CurrentPowerUsage->show($time);
+   
+    return $ShortestPath->MakeShortestPath($PowerMap);
+   
     
     }
   
