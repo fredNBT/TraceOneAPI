@@ -3,6 +3,7 @@
 namespace App\Classes;
 use DB;
 
+
 class ShortestPath
 {
 
@@ -10,12 +11,12 @@ class ShortestPath
 
 public static function MakeShortestPath($CurrentPowerUsage)
     {
-      // $CurrentPowerArray = self::MakeArray($CurrentPowerUsage);
+       $CurrentPowerArray = ShortestPath::MakeArray($CurrentPowerUsage);
 
-      // $ComputedPower = self::datasorter($CurrentPowerArray);
+       $ComputedPower = ShortestPath::datasorter($CurrentPowerArray);
        
-        return 'hi';
-        return $CurrentPowerArray;
+
+        return $ComputedPower;
 
       //  return MakeArray($CurrentPowerUsage);
     }
@@ -128,9 +129,9 @@ public static function MakeShortestPath($CurrentPowerUsage)
         if ($power > 0 )
         for( $i = 0; $i < $power; $i++ )
         {
-            $path = $this->runalgo($_distArr,$a,$b);
+            $path = ShortestPath::runalgo($_distArr,$a,$b);
             $lol = array_pop($path);
-            $this->updateDistance($path,$_distArr); 
+            ShortestPath::updateDistance($path,$_distArr); 
             var_dump($_distArr);
         }
         
@@ -189,17 +190,17 @@ public static function MakeShortestPath($CurrentPowerUsage)
         {
             foreach ($offerpower as $key1 => $offer)
             {
-               $price = $this->runalgo($_distArr,$key1,$key);
-               /* $price = array_pop($price);
-               $pricearray[$key1] = $price; */
+               $price = ShortestPath::runalgo($_distArr,$key1,$key);
+               $price = array_pop($price);
+               $pricearray[$key1] = $price;
             }
-
-            /* $lowestprice = min($pricearray);
+ 
+            $lowestprice = min($pricearray);
             $lowestkey = array_keys($pricearray, $lowestprice)[0]; // key of the cheapest offer for each bid
-         $this->runtransaction($bid,$lowestkey,$key); */
+            ShortestPath::runtransaction($bid,$lowestkey,$key);
         } 
 
-
+        
     }
 
     
