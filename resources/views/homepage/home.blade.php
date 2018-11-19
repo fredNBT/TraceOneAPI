@@ -9,10 +9,6 @@
     <title>Home</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-
-
-
     <script src="{{ asset('js/sigma.js-1.2.1/src/sigma.core.js') }}"></script>
     <script src="{{ asset('js/sigma.js-1.2.1/src/conrad.js') }}"></script>
     <script src="{{ asset('js/sigma.js-1.2.1/src/utils/sigma.utils.js') }}"></script>
@@ -78,17 +74,25 @@
     
     <script src="{{ asset('js/sigma.js-1.2.1/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edgehovers.dashed.js') }}"></script>
     <script src="{{ asset('js/sigma.js-1.2.1/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edges.dotted.js') }}"></script>
-    
-
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/MainPage.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/StatsViewer.css') }}">
+    <script src="https://code.highcharts.com/highcharts.src.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   
   <body>
-
+    <div class="TitleBar">
+        <div class="timer" id="timer"></div>
+    </div>
+   
     <div id="container"></div>
-    <div class="test">HI GUYS !</div>
+    <div class="test">ok</div>
+    <div class="stats" id="stats">Raw stats</div> 
 
-    <script  >
+    <h1 style="color:white">kittens</h1>
+
+    <script>
       sigma.parsers.json('js/data.json', {
         renderer: {              
           container: document.getElementById("container"),
@@ -99,5 +103,9 @@
       }
       });     
       </script>
- </body>
+</body>
+  {{-- js entery Point --}}
+  <script src="{{ asset('js/HighCharts.js') }}"></script>
+  <script src="{{ asset('js/StatsViewer.js') }}"></script>
+<script src="{{ asset('js/MainPage.js') }}"></script>
 </html>
