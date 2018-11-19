@@ -1,15 +1,14 @@
 .stats{
-    border-style: solid;
-    border-width: 1px; 
+
     width: 50vw;
-    display: flex;
+    
 
 }
 
 .Combo{
-    border-style: solid;
-    border-width: 1px; 
+ 
     width: 20%
+    display: flex;
 }
 
 h3{
