@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/StatsViewer.css">
   <title>Document</title>
   <script src="https://code.highcharts.com/highcharts.src.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -24,7 +25,7 @@
 
     let timer = document.getElementById('timer');
     let day = 1;
-     let hour = 19;
+     let hour = 10;
      let minute = 5;
    
    
@@ -94,7 +95,7 @@
                        let stats = document.getElementById('stats');
                       // stats.innerHTML = this.responseText;
                       let StatsView = new StatsViewer();
-                       stats.innerHTML = StatsView.test();
+                       stats.innerHTML = StatsView.FormatedHtml(this.responseText);
    
            } 
                    }
