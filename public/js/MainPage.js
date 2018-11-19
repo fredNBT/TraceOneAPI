@@ -61,7 +61,7 @@ function UpdateJSON(start){
 //Create the XHR Object
 let xhr = new XMLHttpRequest;
    //Call the open function, GET-type of request, url, true-asynchronous
- xhr.open('GET', '../public/api/time/' + start , true)
+ xhr.open('GET', '../api/time/' + start , true)
    //call the onload 
     xhr.onload = function() 
        {
