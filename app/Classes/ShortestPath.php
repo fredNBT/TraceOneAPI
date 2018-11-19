@@ -10,12 +10,12 @@ class ShortestPath
 
 public static function MakeShortestPath($CurrentPowerUsage)
     {
-       $CurrentPowerArray = self::MakeArray($CurrentPowerUsage);
+      // $CurrentPowerArray = self::MakeArray($CurrentPowerUsage);
 
-       $ComputedPower = self::datasorter($CurrentPowerArray);
+      // $ComputedPower = self::datasorter($CurrentPowerArray);
        
-
-        return $ComputedPower;
+        return 'hi';
+        return $CurrentPowerArray;
 
       //  return MakeArray($CurrentPowerUsage);
     }
@@ -190,16 +190,16 @@ public static function MakeShortestPath($CurrentPowerUsage)
             foreach ($offerpower as $key1 => $offer)
             {
                $price = $this->runalgo($_distArr,$key1,$key);
-               $price = array_pop($price);
-               $pricearray[$key1] = $price;
+               /* $price = array_pop($price);
+               $pricearray[$key1] = $price; */
             }
 
-            $lowestprice = min($pricearray);
+            /* $lowestprice = min($pricearray);
             $lowestkey = array_keys($pricearray, $lowestprice)[0]; // key of the cheapest offer for each bid
-         $this->runtransaction($bid,$lowestkey,$key);
+         $this->runtransaction($bid,$lowestkey,$key); */
         } 
 
-        
+
     }
 
     

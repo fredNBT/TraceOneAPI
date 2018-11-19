@@ -8,6 +8,7 @@
   <script src="https://code.highcharts.com/highcharts.src.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="{{ asset('js/HighCharts.js') }}"></script>
+  <script src="{{ asset('js/StatsViewer.js') }}"></script>
 </head>
 <body>
     <div class="timer" id="timer">LOL</div>
@@ -82,7 +83,7 @@
     //Create the XHR Object
     let xhr = new XMLHttpRequest;
        //Call the open function, GET-type of request, url, true-asynchronous
-     xhr.open('GET', '../public/api/SigmaJsSchema/' + start , true)
+     xhr.open('GET', '../public/api/time/' + start , true)
        //call the onload 
         xhr.onload = function() 
            {
@@ -91,7 +92,9 @@
                    {
                        //return server response as an object with JSON.parse
                        let stats = document.getElementById('stats');
-                       stats.innerHTML = this.responseText;
+                      // stats.innerHTML = this.responseText;
+                      let StatsView = new StatsViewer();
+                       stats.innerHTML = StatsView.test();
    
            } 
                    }

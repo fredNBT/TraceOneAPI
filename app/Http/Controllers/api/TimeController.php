@@ -6,7 +6,7 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use DB;
-use resources\Classes\PowerUsageTotals;
+//use App\Classes\PowerUsage;
 
 
 
@@ -36,7 +36,7 @@ class TimeController extends Controller
 
     public function show($time)
     {
-      $Power = new PowerUsage;
+      $Power =   new \App\Classes\PowerUsage();;
       return $Power::show($time);
     }
 
