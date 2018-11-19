@@ -11,7 +11,6 @@ let x = setInterval(function() {
  updateminute();
  checkminute();
  checkhour();
-
  UpdateJSON(start);
  
  }
@@ -55,6 +54,9 @@ function checkhour()
  }
 }
 
+ let LC = new LineChart();
+ LC.CreateLineChart();
+
 function UpdateJSON(start){
 //Create the XHR Object
 let xhr = new XMLHttpRequest;
@@ -66,12 +68,11 @@ let xhr = new XMLHttpRequest;
            //check if the status is 200(means everything is okay)
            if (this.status === 200) 
                {
-                   //return server response as an object with JSON.parse
-                   let stats = document.getElementById('stats');
+                  //return server response as an object with JSON.parse
+                  let stats = document.getElementById('stats');
                   // stats.innerHTML = this.responseText;
                   let StatsView = new StatsViewer();
                    stats.innerHTML = StatsView.FormatedHtml(this.responseText);
-
        } 
                }
    //call send

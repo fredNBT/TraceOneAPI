@@ -12,22 +12,16 @@ class StatsViewer {
 
          let responceobj = JSON.parse(ResponceText);
 
-        // console.log( JSON.parse(ResponceText));
-        // console.log(obj);
 
         
          $.each(responceobj, function (index, value) {
            //console.log(value);
 
            if (value >= 0 ){
-                TextToReturn +=   '<div class="Combo"><h3>' + index + '</h3><div class="Pos">'+ value+'</div></div>';
-              // TextToReturn += '<h1>' + value + '</h1>'
-              // TextToReturn += '<h1>' + index + '</h1>'
+                TextToReturn +=   '<div class="Combo"><p>' + index + '</p><div class="Pos">' + '+' + value +'</div></div>';
            }
            else{
-            TextToReturn +=   '<div class="Combo"><h3>' + index + '</h3><div class="Neg">'+ value+'</div></div>';
-           // TextToReturn += '<h5>' + value + '</h5>'
-           // TextToReturn += '<h1>' + index + '</h1>'
+            TextToReturn +=   '<div class="Combo"><p>' + index + '</p><div class="Neg">'+ value+'</div></div>';
            }
          });
 

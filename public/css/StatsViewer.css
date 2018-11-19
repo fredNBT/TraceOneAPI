@@ -1,14 +1,11 @@
 .stats{
-    border-style: solid;
     border-width: 1px; 
-    width: 50vw;
-    display: flex;
-
+    width: 10vw;
+    margin-right: 10vw;
 }
 
 .Combo{
-    border-style: solid;
-    border-width: 1px; 
+    display: flex;
     width: 20%
 }
 
@@ -18,10 +15,26 @@ h3{
 
 .Pos{
     text-align: center;
-    color: green;
+    color: lightblue;
+    padding-left: 50px;
 }
 
 .Neg{
     text-align: center;
     color: red;
+    padding-left: 50px;
+}
+.PageCenter{
+    display: flex;
+}
+
+.PowerStatsHeader{
+    color: white;
+    size: 2rem;
+    border-bottom: 1px solid lightblue;
+}
+
+.LineChart{
+    height: 30vh;
+    width: 40vw;
 }

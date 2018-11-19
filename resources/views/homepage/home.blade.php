@@ -77,7 +77,7 @@
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/MainPage.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/StatsViewer.css') }}">
-    <script src="https://code.highcharts.com/highcharts.src.js"></script>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   
@@ -86,11 +86,16 @@
         <div class="timer" id="timer"></div>
     </div>
    
+    <div class="PageCenter">
     <div id="container"></div>
-    <div class="test">ok</div>
-    <div class="stats" id="stats">Raw stats</div> 
+    <div class="PowerStats">
+      <p class="PowerStatsHeader"> Power Usage Totals</p>
+      <br style="color:white">
+    <div class="stats" id="stats">Raw stats</div>
+  </div>
+  </div> 
 
-    <h1 style="color:white">kittens</h1>
+    <div id="Chart1" class="LineChart" >chart 1</div>
 
     <script>
       sigma.parsers.json('js/data.json', {
@@ -105,6 +110,7 @@
       </script>
 </body>
   {{-- js entery Point --}}
+  <script src="https://code.highcharts.com/highcharts.src.js"></script>
   <script src="{{ asset('js/HighCharts.js') }}"></script>
   <script src="{{ asset('js/StatsViewer.js') }}"></script>
 <script src="{{ asset('js/MainPage.js') }}"></script>
