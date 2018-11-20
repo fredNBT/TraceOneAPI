@@ -1,23 +1,44 @@
 
  class LineChart {
+    
+    constructor(power, MountTo) {
+        
+        this.power = 20;
+        this.MountTo = MountTo;
+      }
+
+      set PowerVal(Power){
+          this.power = Power;
+      } 
+
+      get PowerVal(){
+          return this.power;
+      }
+      
+
 
      test(){
         alert('test');
     }
 
     CreateLineChart(){
+       var self = this;
         var options = {
             chart:{
-
                 events: {
-                    load: function () {
-        
+                    load: function  () {
+                       // this.UpdateChart
+                        self.UpdateChart();
                         // set up the updating of the chart each second
                         var series = this.series[0];
                         setInterval(function () {
                             var x = (new Date()).getTime(), // current time
                                 y = Math.round(Math.random() * 100);
-                            series.addPoint([x, y], true, true);
+                             // console.log("Im here " + this.UpdateChart() ) ;
+                                
+                            series.addPoint([x, self.UpdateChart()], true, true);
+                            
+                            
                         }, 1000);
                     }},
 
@@ -48,24 +69,17 @@
             series: [{
           data : [7,5,3,4,5]
         }]
-
         };
+
+      
         var chart = new Highcharts.chart(options);
 
-        
-
-       /*  let curenttime = '00:08:00.0000000'
-        $.getJSON('http://traceoneapi.azurewebsites.net/api/power/' + curenttime,function(data){
-
-              var processed_json = new Array();
-                $.map(data, function(obj, i) {
-                processed_json.push([obj.Time, parseInt(obj.Total)]);
-                 options.series[0].data = processed_json;
-                 var chart = new Highcharts.chart(options);
-        });
-
-
-        }) */
+    }
+    
+    UpdateChart(){
+        console.log('I work');
+        console.log("this power val  " + this.PowerVal);  
+        return this.PowerVal;  
     }
 
   }
