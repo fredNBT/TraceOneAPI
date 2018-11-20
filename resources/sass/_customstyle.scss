@@ -1,5 +1,78 @@
-#container{
-  height: 500px;
-  width: 500px;
-  margin: auto;
+body{
+
+  background-color: #132335;
 }
+
+.timer{
+  color: white;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 2rem;
+}
+
+.TitleBar{
+  display: flex;
+  height: 100px;
+  width: 100vw;
+  justify-content: center;   
+}
+
+#container{
+  height: 50vh;
+  width: 80vw;
+  border-top: 2px solid grey;
+  background-color:#2e4661;
+  margin: 10px;
+
+}
+
+.stats{
+  border-width: 1px; 
+  width: 10vw;
+  margin-right: 10vw;
+  color: white;
+}
+
+.Combo{
+  display: flex;
+  width: 20%
+}
+
+h3{
+  text-align: center;
+}
+
+.Pos{
+  text-align: center;
+  color: lightblue;
+  padding-left: 50px;
+}
+
+.Neg{
+  text-align: center;
+  color: red;
+  padding-left: 50px;
+}
+.PageCenter{
+  display: flex;
+
+}
+
+.PowerStatsHeader{
+  color: white;
+  size: 2rem;
+  border-bottom: 1px solid lightblue;
+}
+
+.LineChart{
+  height: 30vh;
+  width: 40vw;
+}
+
+.PowerStats{
+  height: 50vh;
+  width: 20vw;
+  border: 5px solid grey;
+  padding: 5px solid black;
+}
+

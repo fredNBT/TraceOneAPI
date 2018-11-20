@@ -82,17 +82,26 @@
   </head>
   
   <body>
+
+
+
+
+
+
+    
     <div class="TitleBar">
         <div class="timer" id="timer"></div>
     </div>
    
     <div class="PageCenter">
-    <div id="container"></div>
+
     <div class="PowerStats">
       <p class="PowerStatsHeader"> Power Usage Totals</p>
       <br style="color:white">
     <div class="stats" id="stats">Raw stats</div>
+
   </div>
+          {{-- canvas --}}<div id="container"></div>
   </div> 
 
     <div id="Chart1" class="LineChart" >chart 1</div>
@@ -102,21 +111,13 @@
     <div id="Chart5" class="LineChart" >chart 5</div>
     <div id="Chart6" class="LineChart" >chart 6</div>
 
-    <script>
-      sigma.parsers.json('js/data.json', {
-        renderer: {              
-          container: document.getElementById("container"),
-          type: 'canvas'
-      },
-      settings: {
-        defaultNodeColor: '#0000FF'
-      }
-      });     
-      </script>
+
 </body>
   {{-- js entery Point --}}
+  <script src="{{ asset('js\script.js') }}"></script>
   <script src="https://code.highcharts.com/highcharts.src.js"></script>
   <script src="{{ asset('js/HighCharts.js') }}"></script>
   <script src="{{ asset('js/StatsViewer.js') }}"></script>
 <script src="{{ asset('js/MainPage.js') }}"></script>
+
 </html>
