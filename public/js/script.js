@@ -76,9 +76,11 @@ sigma.parsers.json(
       defaultEdgeColor: '#dbc09b',
       font: "calibri",
       labelSize: "proportional",
-      boderSize: 1,
-      sideMargin: 0.5,
-      zoomMax: 1
+      sideMargin: 6,
+      zoomMax: 1,
+      zoomMin:1,
+      autoResize: "true",
+      autoRescale: "true"
     }
   },
   function(s) {

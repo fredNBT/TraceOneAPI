@@ -96,12 +96,13 @@
     <div class="PageCenter">
 
     <div class="PowerStats">
-      <p class="PowerStatsHeader"> Power Usage Totals</p>
+      <p class="PowerStatsHeader">      Power Usage Totals</p>
       <br style="color:white">
     <div class="stats" id="stats">Raw stats</div>
 
   </div>
-          {{-- canvas --}}<div id="container"></div>
+
+  {{-- canvas --}}<div id="container"></div>
   </div> 
 
     <div id="Chart1" class="LineChart" >chart 1</div>
