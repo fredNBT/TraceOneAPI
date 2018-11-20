@@ -9,7 +9,7 @@ use DB;
   public static  function show($time)
   {
     
-     $Houses = DB::select( "SELECT PowerUsage.Total, PowerUsage.House, SolarPanels.SolarPannels FROM PowerUsage INNER JOIN SolarPanels ON PowerUsage.House=SolarPanels.House where PowerUsage.DateTimeTest = '" .$time. "'");
+        $Houses = DB::select( "SELECT PowerUsage.Total, PowerUsage.House, SolarPanels.SolarPannels FROM PowerUsage INNER JOIN SolarPanels ON PowerUsage.House=SolarPanels.House where PowerUsage.DateTimeTest = '" .$time. "'");
     
     $Sun = DB::select("select * from ActualSolar where LocalTime = '" .$time. "'");
      $i = 0; 
@@ -20,9 +20,16 @@ use DB;
       $Powerproduced = ($Sun[0]->Power_MW_) * $Houses[$i]->SolarPannels;
       $Powermap[$Houses[$i]->House] = $Powerproduced - $Houses[$i]->Total; 
       $i += 1; 
-    }
-    return $Powermap;   
+    }  
 
-
+    /* $Powermap = array(
+      "House1" => 1,
+      "House2" => -3,
+      "House3" => 2,
+      "House4" => -3,
+      "House5" => -3,
+      "House6" => 5,
+    ); */
+    return $Powermap;
   }
 }
