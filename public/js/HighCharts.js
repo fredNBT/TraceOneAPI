@@ -36,13 +36,11 @@
                                 y = Math.round(Math.random() * 100);
                              // console.log("Im here " + this.UpdateChart() ) ;
                                 
-                            series.addPoint([x, self.UpdateChart()], true, true);
-                            
-                            
+                            series.addPoint([x, self.UpdateChart()], true, true);           
                         }, 1000);
                     }},
 
-                renderTo: 'Chart1',
+                renderTo: self.MountTo,
                 type: 'spline',
                 backgroundColor: '#132335'
                 
@@ -69,11 +67,8 @@
             series: [{
           data : [7,5,3,4,5]
         }]
-        };
-
-      
+        }; 
         var chart = new Highcharts.chart(options);
-
     }
     
     UpdateChart(){

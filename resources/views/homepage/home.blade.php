@@ -96,6 +96,11 @@
   </div> 
 
     <div id="Chart1" class="LineChart" >chart 1</div>
+    <div id="Chart2" class="LineChart" >chart 2</div>
+    <div id="Chart3" class="LineChart" >chart 3</div>
+    <div id="Chart4" class="LineChart" >chart 4</div>
+    <div id="Chart5" class="LineChart" >chart 5</div>
+    <div id="Chart6" class="LineChart" >chart 6</div>
 
     <script>
       sigma.parsers.json('js/data.json', {

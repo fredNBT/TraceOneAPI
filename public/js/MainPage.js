@@ -53,6 +53,20 @@ function checkhour()
 
 let LC = new LineChart(57,'Chart1');
 LC.CreateLineChart();
+let LC2 = new LineChart(57,'Chart2');
+LC2.CreateLineChart();
+let LC3 = new LineChart(57,'Chart3');
+LC3.CreateLineChart();
+let LC4 = new LineChart(57,'Chart4');
+LC4.CreateLineChart();
+let LC5 = new LineChart(57,'Chart5');
+LC5.CreateLineChart();
+let LC6 = new LineChart(57,'Chart6');
+LC6.CreateLineChart();
+
+
+
+
 function UpdateJSON(start){
 //Create the XHR Object
 let xhr = new XMLHttpRequest;
@@ -73,7 +87,7 @@ let xhr = new XMLHttpRequest;
                 let StatsView = new StatsViewer();
                 stats.innerHTML = StatsView.FormatedHtml(this.responseText);
        } 
-               }
+    }
    //call send
    xhr.send();
    }
@@ -84,12 +98,17 @@ let xhr = new XMLHttpRequest;
     $.each(responceobj, function (index, value) {
       if(index === 'House1'){
         LC.PowerVal = value;
+      }  else if(index === 'House2') {
+        LC2.PowerVal = value;
+      }else if(index === 'House3') {
+        LC3.PowerVal = value;
+      }else if(index === 'House4') {
+        LC4.PowerVal = value;
+      }else if(index === 'House5') {
+        LC5.PowerVal = value;
+      }else if(index === 'House6') {
+        LC6.PowerVal = value;
       }
-      
-        
-       
-        
-      
     }
     )}
   
