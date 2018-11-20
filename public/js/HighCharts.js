@@ -49,7 +49,7 @@
                 enabled: true
             },
             title: {
-                text: "hola",
+                text: "",
                 align: 'center'
             },
             yAxis:{

@@ -1,6 +1,8 @@
 body{
-
+  display: flex;
+  flex-flow: row wrap;
   background-color: #132335;
+  justify-content: center;
 }
 
 .timer{
@@ -18,15 +20,17 @@ body{
 }
 
 #container{
-  height: 50vh;
-  width: 80vw;
-  border-top: 2px solid grey;
-  background-color:#2e4661;
+  height: 90%;
+  width: 30%;
+  background-color: rgba(46,70,97, 0.75);
   margin: 10px;
-
+  border-radius: 50px;
+  border: 10px solid grey;
 }
 
+
 .stats{
+  margin-left: 1vw;
   border-width: 1px; 
   width: 10vw;
   margin-right: 10vw;
@@ -55,13 +59,21 @@ h3{
 }
 .PageCenter{
   display: flex;
-
+  border-image: linear-gradient(#f6b73c, #4d9f0c) 20;
+  border-style: solid;
+  border-width: 10px;
+  background-color: black;
+  justify-content: space-evenly;
+  width: 80vw;
+  height: 500px;
 }
 
 .PowerStatsHeader{
+  margin-top: 6%;
   color: white;
   size: 2rem;
   border-bottom: 1px solid lightblue;
+  text-align: center;
 }
 
 .LineChart{
@@ -70,9 +82,12 @@ h3{
 }
 
 .PowerStats{
-  height: 50vh;
-  width: 20vw;
-  border: 5px solid grey;
-  padding: 5px solid black;
+  height: 90%;
+  width: 20%;
+  background-color: rgba(46,70,97, 0.75);
+  border-radius: 50px;
+  border-color: #132335;
+  border: 10px solid grey;
+  margin: 10px;
 }
 

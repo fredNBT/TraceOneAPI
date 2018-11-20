@@ -5,43 +5,43 @@
       "label": "node 1",
       "x": 0,
       "y": 0,
-      "size": 10,
+      "size": 5,
       "type": "house"
       
     },
     {
       "id": "n1",
       "label": "node 2",
-      "x": 2,
+      "x": 30,
       "y": 0,
-      "size": 10,
+      "size": 5,
       "type": "house"
       
     },
     {
       "id": "n2",
       "label": "node 3",
-      "x": 1,
-      "y": 1,
-      "size": 10,
+      "x": 10,
+      "y": 15,
+      "size": 5,
       "type": "house"
       
     },
     {
       "id": "n3",
       "label": "node 4",
-      "x": 1.5,
-      "y": 1.5,
-      "size": 10,
+      "x": 20,
+      "y": 20,
+      "size": 5,
       "type": "house"
       
     },
     {
       "id": "n4",
       "label": "node 5",
-      "x": 2,
-      "y": 2,
-      "size": 10,
+      "x": 30,
+      "y": 30,
+      "size": 5,
       "type": "house"
       
     },
@@ -49,8 +49,8 @@
       "id": "n5",
       "label": "node 6",
       "x": 0,
-      "y": 2,
-      "size": 10,
+      "y": 30,
+      "size": 5,
       "type": "house"
       
     }
