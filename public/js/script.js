@@ -65,8 +65,7 @@ sigma.classes.graph.addMethod('neighbors', function(nodeId) {
 });
 
 sigma.parsers.json(
-  ResponceText,
- // 'js/data.json',
+'js/data.json',
   { // Here is the ID of the DOM element that
     // will contain the graph:
     renderer: {

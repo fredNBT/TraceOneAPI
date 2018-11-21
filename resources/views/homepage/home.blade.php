@@ -139,7 +139,7 @@
 
 
 </body>
-  {{-- js entery Point --}}
+  {{-- js entry Point --}}
   <script src="{{ asset('js\script.js') }}"></script>
   <script src="https://code.highcharts.com/highcharts.src.js"></script>
   <script src="{{ asset('js/HighCharts.js') }}"></script>
