@@ -75,8 +75,6 @@
     <script src="{{ asset('js/sigma.js-1.2.1/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edgehovers.dashed.js') }}"></script>
     <script src="{{ asset('js/sigma.js-1.2.1/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edges.dotted.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/MainPage.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/StatsViewer.css') }}">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
@@ -140,7 +138,7 @@
 
 </body>
   {{-- js entry Point --}}
-  <script src="{{ asset('js\script.js') }}"></script>
+  <script src="{{ asset('js/script.js') }}"></script>
   <script src="https://code.highcharts.com/highcharts.src.js"></script>
   <script src="{{ asset('js/HighCharts.js') }}"></script>
   <script src="{{ asset('js/StatsViewer.js') }}"></script>

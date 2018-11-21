@@ -26,7 +26,14 @@ class SigmaJsSchemaController extends Controller
 
       $jsondata = $this->makejson($pricearray);
 
-      return $jsondata;
+      var_dump($jsondata);
+      $old = getcwd(); // Save the current directory
+      chdir("../public/js");
+      $file = 'data.json';
+      unlink($file);
+      file_put_contents($file,$jsondata);
+      chdir($old); // Restore the old working directory
+
     
     }
 
