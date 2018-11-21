@@ -56,15 +56,13 @@
                 align: 'center'
             },
             yAxis:{
-                title: {
-                    text: 'yaxis'
-                }
+
             },
             xAxis:{
                 type: "category",
                 categories: [1,2,3,4,5],
-                title: {
-                    text: 'xAxis'
+                labels: {
+                    enabled: false
                 }
             },
             series: [{

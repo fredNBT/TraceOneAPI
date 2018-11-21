@@ -138,14 +138,14 @@ sigma.parsers.json(
       s.refresh();
     });
 
-    s.startForceAtlas2();
+    // s.startForceAtlas2();
     
-    setTimeout(function () {
-      console.log('stopping')
-      s.stopForceAtlas2()
-      }, 10000)
+    // setTimeout(function () {
+    //   console.log('stopping')
+    //   s.stopForceAtlas2()
+    //   }, 10000)
     
-    setInterval(addNode, 3000)
+    // setInterval(addNode, 3000)
   }
 );
 
