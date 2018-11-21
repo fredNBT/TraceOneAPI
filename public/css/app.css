@@ -10505,7 +10505,7 @@ body {
 
 .canvasborder {
   width: 100%;
-  height: 100%;
+  height: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10515,9 +10515,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -o-border-image: linear-gradient(#d8d0ef, #ebe9f9, #a6a6b0) 20;
-     border-image: -webkit-gradient(linear, left top, left bottom, from(#d8d0ef), color-stop(#ebe9f9), to(#a6a6b0)) 20;
-     border-image: linear-gradient(#d8d0ef, #ebe9f9, #a6a6b0) 20;
+  -o-border-image: linear-gradient(#a6a6b0, #ebe9f9, #a6a6b0, #ebe9f9, #a6a6b0) 20;
+     border-image: -webkit-gradient(linear, left top, left bottom, from(#a6a6b0), color-stop(#ebe9f9), color-stop(#a6a6b0), color-stop(#ebe9f9), to(#a6a6b0)) 20;
+     border-image: linear-gradient(#a6a6b0, #ebe9f9, #a6a6b0, #ebe9f9, #a6a6b0) 20;
   border-style: solid;
   border-width: 5px;
 }
@@ -10533,11 +10533,32 @@ body {
   width: 70%;
 }
 
-.linegraphborder {
+.linegraphborder1 {
   width: 100%;
-  -o-border-image: linear-gradient(#d8d0ef, #ebe9f9, #a6a6b0) 20;
-     border-image: -webkit-gradient(linear, left top, left bottom, from(#d8d0ef), color-stop(#ebe9f9), to(#a6a6b0)) 20;
-     border-image: linear-gradient(#d8d0ef, #ebe9f9, #a6a6b0) 20;
+  height: 33.4%;
+  -o-border-image: linear-gradient(#a6a6b0, #ebe9f9, #a6a6b0) 30;
+     border-image: -webkit-gradient(linear, left top, left bottom, from(#a6a6b0), color-stop(#ebe9f9), to(#a6a6b0)) 30;
+     border-image: linear-gradient(#a6a6b0, #ebe9f9, #a6a6b0) 30;
+  border-style: solid;
+  border-width: 5px;
+}
+
+.linegraphborder2 {
+  width: 100%;
+  height: 33.4%;
+  -o-border-image: linear-gradient(#a6a6b0, #ebe9f9, #a6a6b0) 30;
+     border-image: -webkit-gradient(linear, left top, left bottom, from(#a6a6b0), color-stop(#ebe9f9), to(#a6a6b0)) 30;
+     border-image: linear-gradient(#a6a6b0, #ebe9f9, #a6a6b0) 30;
+  border-style: solid;
+  border-width: 5px;
+}
+
+.linegraphborder3 {
+  width: 100%;
+  height: 33.4%;
+  -o-border-image: linear-gradient(#a6a6b0, #ebe9f9, #a6a6b0) 30;
+     border-image: -webkit-gradient(linear, left top, left bottom, from(#a6a6b0), color-stop(#ebe9f9), to(#a6a6b0)) 30;
+     border-image: linear-gradient(#a6a6b0, #ebe9f9, #a6a6b0) 30;
   border-style: solid;
   border-width: 5px;
 }
@@ -10556,6 +10577,7 @@ body {
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
   width: 20%;
+  height: 100%;
 }
 
 #container {
@@ -10599,9 +10621,9 @@ h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -o-border-image: linear-gradient(#d8d0ef, #ebe9f9, #a6a6b0) 20;
-     border-image: -webkit-gradient(linear, left top, left bottom, from(#d8d0ef), color-stop(#ebe9f9), to(#a6a6b0)) 20;
-     border-image: linear-gradient(#d8d0ef, #ebe9f9, #a6a6b0) 20;
+  -o-border-image: linear-gradient(#a6a6b0, #ebe9f9, #a6a6b0, #ebe9f9, #a6a6b0, #ebe9f9, #a6a6b0) 10;
+     border-image: -webkit-gradient(linear, left top, left bottom, from(#a6a6b0), color-stop(#ebe9f9), color-stop(#a6a6b0), color-stop(#ebe9f9), color-stop(#a6a6b0), color-stop(#ebe9f9), to(#a6a6b0)) 10;
+     border-image: linear-gradient(#a6a6b0, #ebe9f9, #a6a6b0, #ebe9f9, #a6a6b0, #ebe9f9, #a6a6b0) 10;
   border-style: solid;
   border-width: 5px;
   background-image: url(/img/bluebg.jpg);
@@ -10624,12 +10646,12 @@ h3 {
 }
 
 .PowerStats {
-  height: 20%;
+  height: 30%;
   width: 100%;
   background-color: rgba(0, 4, 19, 0.75);
-  -o-border-image: linear-gradient(#d8d0ef, #ebe9f9, #a6a6b0) 20;
-     border-image: -webkit-gradient(linear, left top, left bottom, from(#d8d0ef), color-stop(#ebe9f9), to(#a6a6b0)) 20;
-     border-image: linear-gradient(#d8d0ef, #ebe9f9, #a6a6b0) 20;
+  -o-border-image: linear-gradient(#a6a6b0, #ebe9f9, #a6a6b0) 20;
+     border-image: -webkit-gradient(linear, left top, left bottom, from(#a6a6b0), color-stop(#ebe9f9), to(#a6a6b0)) 20;
+     border-image: linear-gradient(#a6a6b0, #ebe9f9, #a6a6b0) 20;
   border-style: solid;
   border-width: 5px;
 }
