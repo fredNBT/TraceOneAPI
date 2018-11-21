@@ -21,12 +21,10 @@ class SigmaJsSchemaController extends Controller
       //$time = "2007-01-01 03:20:00.000";
 
     $Powermap =  $CurrentPowerUsage->show($time);
-    
+    var_dump($Powermap);
     $pricearray = $ShortestPath->MakeShortestPath($Powermap);
-
       $jsondata = $this->makejson($pricearray);
-
-      var_dump($jsondata);
+      var_dump($pricearray);
       $old = getcwd(); // Save the current directory
       chdir("../public/js");
       $file = 'data.json';
@@ -34,6 +32,7 @@ class SigmaJsSchemaController extends Controller
       file_put_contents($file,$jsondata);
       chdir($old); // Restore the old working directory
 
+      return $jsondata;
     
     }
 
@@ -60,36 +59,36 @@ class SigmaJsSchemaController extends Controller
 
               array("id" => "n1",
                     "label"=> "House 2",
-                    "x"=> 2,
+                    "x"=> 60,
                     "y"=> 0,
                     "size"=> 10,
                     "type"=> "house"),
 
               array("id" => "n2",
                     "label"=> "House 3",
-                    "x"=> 1,
-                    "y"=> 1,
+                    "x"=> 25,
+                    "y"=> 15,
                     "size"=> 10,
                     "type"=> "house"),
 
               array("id" => "n3",
                     "label"=> "House 4",
-                    "x"=> 1.5,
-                    "y"=> 1.5,
+                    "x"=> 40,
+                    "y"=> 20,
                     "size"=> 10,
                     "type"=> "house"),
                     
               array("id" => "n4",
                     "label"=> "House 5",
-                    "x"=> 2,
-                    "y"=> 2,
+                    "x"=> 60,
+                    "y"=> 30,
                     "size"=> 10,
                     "type"=> "house"),
                     
               array("id" => "n5",
                     "label"=> "House 6",
                     "x"=> 0,
-                    "y"=> 2,
+                    "y"=> 30,
                     "size"=> 10,
                     "type"=> "house")
             ),
@@ -100,7 +99,7 @@ class SigmaJsSchemaController extends Controller
               "source" => "n0",
               "target" => "n1",
               "size" => 1,
-              "color" => "rgb(".checkcolor($pricearray[1][2]).",100,0)"),
+              "color" => "rgb(".$pricearray[1][2].",100,0)"),
               
               array("id"=> "e1",
               "label" => "second line",
@@ -219,7 +218,7 @@ class SigmaJsSchemaController extends Controller
             );
 
             $jsondata = json_encode($jsonarray);
-
+         
             return $jsondata;
             
     }

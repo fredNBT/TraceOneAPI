@@ -24,7 +24,7 @@ use DB;
 
      $Powermap = array(
       "House1" => 1,
-      "House2" => -3,
+      "House2" => -2,
       "House3" => 2,
       "House4" => -3,
       "House5" => -3,
