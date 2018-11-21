@@ -1,5 +1,5 @@
 
-function MakeNewGraph(ResponceText){
+
 // Code goes here
 sigma.utils.pkg('sigma.canvas.edges');
 sigma.canvas.edges.t = function(edge, source, target, context, settings) {
@@ -154,4 +154,4 @@ sigma.parsers.json(
 
 function addNode () {
   
-}}
+}
