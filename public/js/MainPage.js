@@ -103,7 +103,8 @@ let xhr = new XMLHttpRequest;
                //check if the status is 200(means everything is okay)
                if (this.status === 200) 
                    {
-                     MakeNewGraph(this.responseText);
+                     console.log(this.responseText);
+                     //MakeNewGraph(this.responseText);
    
            } 
                    }
