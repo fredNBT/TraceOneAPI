@@ -56,13 +56,19 @@ class LineChart {
                 text: "",
                 align: 'center'
             },
+<<<<<<< HEAD
             yAxis: {
                 title: {
                     text: 'yaxis'
                 }
+=======
+            yAxis:{
+
+>>>>>>> lennart
             },
             xAxis: {
                 type: "category",
+<<<<<<< HEAD
                 categories: [1, 2, 3, 4, 5],
                 title: {
                     text: 'xAxis'
@@ -71,6 +77,12 @@ class LineChart {
                     {
                         enabled: false
                     }
+=======
+                categories: [1,2,3,4,5],
+                labels: {
+                    enabled: false
+                }
+>>>>>>> lennart
             },
             series: [{
                 data: [7, 5, 3, 4, 5]
