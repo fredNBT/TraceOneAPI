@@ -36,7 +36,7 @@ class TimeController extends Controller
 
     public function show($time)
     {
-      $Power =   new \App\Classes\PowerUsage();;
+      $Power =   new \App\Classes\PowerUsage();
       return $Power::show($time);
     }
 
