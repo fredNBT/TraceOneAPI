@@ -95,22 +95,47 @@
    
     <div class="PageCenter">
 
+    <div class="linecontainer">
+      <div class="linegraphborder">
+        <div id="Chart1" class="LineChart" >chart 1</div>
+      </div>
+      <div class="linegraphborder">
+        <div id="Chart2" class="LineChart" >chart 2</div>
+      </div>
+      <div class="linegraphborder">
+        <div id="Chart3" class="LineChart" >chart 3</div>
+      </div>
+    </div>
+
+
+    <div class="centercontainer">
     <div class="PowerStats">
-      <p class="PowerStatsHeader">      Power Usage Totals</p>
-      <br style="color:white">
+      <p class="PowerStatsHeader">Power Usage Totals</p>
     <div class="stats" id="stats">Raw stats</div>
 
-  </div>
+    </div>
+    <div class="canvasborder">
+      {{-- canvas --}}<div id="container"></div>
+    </div>
+    </div>
 
-  {{-- canvas --}}<div id="container"></div>
-  </div> 
 
-    <div id="Chart1" class="LineChart" >chart 1</div>
-    <div id="Chart2" class="LineChart" >chart 2</div>
-    <div id="Chart3" class="LineChart" >chart 3</div>
-    <div id="Chart4" class="LineChart" >chart 4</div>
-    <div id="Chart5" class="LineChart" >chart 5</div>
-    <div id="Chart6" class="LineChart" >chart 6</div>
+    <div class="linecontainer">
+      <div class="linegraphborder">
+        <div id="Chart4" class="LineChart" >chart 4</div>
+      </div>
+      <div class="linegraphborder">
+        <div id="Chart5" class="LineChart" >chart 5</div>
+      </div>
+      <div class="linegraphborder">
+        <div id="Chart6" class="LineChart" >chart 6</div>
+      </div>
+    </div>
+
+    </div> 
+
+
+
 
 
 </body>
