@@ -158,7 +158,7 @@ public static function MakeShortestPath($CurrentPowerUsage)
             $path = ShortestPath::runalgo($_distArr,$a,$b);
             $lol = array_pop($path);
             ShortestPath::updateDistance($path,$_distArr); 
-            var_dump($_distArr);
+           
         }
         
     }
