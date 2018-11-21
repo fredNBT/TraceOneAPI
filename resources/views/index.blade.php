@@ -108,26 +108,7 @@
    
        }
 
-       function UpdatedataJSON(){
-    //Create the XHR Object
-    let xhr = new XMLHttpRequest;
-       //Call the open function, GET-type of request, url, true-asynchronous
-     xhr.open('GET', '../public/api/SigmaJsSchema/' + start , true)
-       //call the onload 
-        xhr.onload = function() 
-           {
-               //check if the status is 200(means everything is okay)
-               if (this.status === 200) 
-                   {
-                     MakeNewGraph(this.responseText);
-   
-           } 
-                   }
-       //call send
-       xhr.send();
-   
-       }
-   
+       
        function
    
    
