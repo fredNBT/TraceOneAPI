@@ -11,6 +11,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="{{ asset('js/HighCharts.js') }}"></script>
   <script src="{{ asset('js/StatsViewer.js') }}"></script>
+  <script src="{{ asset('js/script.js') }}"></script>
 </head>
 <body>
     <div class="timer" id="timer">LOL</div>
@@ -39,6 +40,7 @@
      checkhour();
    
      UpdateJSON(start);
+     UpdatedataJSON();
      
      }
    ,1000 )
@@ -92,6 +94,7 @@
                //check if the status is 200(means everything is okay)
                if (this.status === 200) 
                    {
+                   
                        //return server response as an object with JSON.parse
                        let stats = document.getElementById('stats');
                       // stats.innerHTML = this.responseText;
@@ -104,7 +107,28 @@
        xhr.send();
    
        }
+
+       function UpdatedataJSON(){
+    //Create the XHR Object
+    let xhr = new XMLHttpRequest;
+       //Call the open function, GET-type of request, url, true-asynchronous
+     xhr.open('GET', '../public/api/SigmaJsSchema/' + start , true)
+       //call the onload 
+        xhr.onload = function() 
+           {
+               //check if the status is 200(means everything is okay)
+               if (this.status === 200) 
+                   {
+                     MakeNewGraph(this.responseText);
    
+           } 
+                   }
+       //call send
+       xhr.send();
+   
+       }
+   
+       function
    
    
       

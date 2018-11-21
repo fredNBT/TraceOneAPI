@@ -1,3 +1,5 @@
+
+function MakeNewGraph(ResponceText)
 // Code goes here
 sigma.utils.pkg('sigma.canvas.edges');
 sigma.canvas.edges.t = function(edge, source, target, context, settings) {
@@ -63,7 +65,8 @@ sigma.classes.graph.addMethod('neighbors', function(nodeId) {
 });
 
 sigma.parsers.json(
-  'js/data.json',
+  ResponceText,
+ // 'js/data.json',
   { // Here is the ID of the DOM element that
     // will contain the graph:
     renderer: {

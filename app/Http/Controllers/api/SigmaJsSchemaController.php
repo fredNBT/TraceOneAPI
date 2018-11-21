@@ -32,46 +32,55 @@ class SigmaJsSchemaController extends Controller
 
     public function makejson($pricearray)
     {
+
+       function checkcolor($number){
+            $number = $number * 9;
+            if ($number > 255){
+                  $number = 255;
+            }
+            return $number;
+      };
+
         $jsonarray = array
             (
             "nodes" => array(
               array("id" => "n0",
-                    "label"=> "node 1",
+                    "label"=> "House 1",
                     "x"=> 0,
                     "y"=> 0,
                     "size"=> 10,
                     "type"=> "house"),
 
               array("id" => "n1",
-                    "label"=> "node 2",
+                    "label"=> "House 2",
                     "x"=> 2,
                     "y"=> 0,
                     "size"=> 10,
                     "type"=> "house"),
 
               array("id" => "n2",
-                    "label"=> "node 3",
+                    "label"=> "House 3",
                     "x"=> 1,
                     "y"=> 1,
                     "size"=> 10,
                     "type"=> "house"),
 
               array("id" => "n3",
-                    "label"=> "node 4",
+                    "label"=> "House 4",
                     "x"=> 1.5,
                     "y"=> 1.5,
                     "size"=> 10,
                     "type"=> "house"),
                     
               array("id" => "n4",
-                    "label"=> "node 5",
+                    "label"=> "House 5",
                     "x"=> 2,
                     "y"=> 2,
                     "size"=> 10,
                     "type"=> "house"),
                     
               array("id" => "n5",
-                    "label"=> "node 6",
+                    "label"=> "House 6",
                     "x"=> 0,
                     "y"=> 2,
                     "size"=> 10,
@@ -84,8 +93,7 @@ class SigmaJsSchemaController extends Controller
               "source" => "n0",
               "target" => "n1",
               "size" => 1,
-              "type" => "",
-              "color" => `rgb($,100,0)`),
+              "color" => "rgb(".checkcolor($pricearray[1][2]).",100,0)"),
               
               array("id"=> "e1",
               "label" => "second line",
@@ -93,15 +101,14 @@ class SigmaJsSchemaController extends Controller
               "target" => "n0",
               "size" => 1,
               "type" => "curvedArrow",
-              "color" => `rgb($,100,0)`),
+              "color" => "rgb(".checkcolor($pricearray[2][1]).",100,0)"),
               
               array("id"=> "e2",
               "label" => "third line",
               "source" => "n0",
               "target" => "n2",
               "size" => 1,
-              "type" => "",
-              "color" => `rgb($,100,0)`),
+              "color" => "rgb(".checkcolor($pricearray[1][3]).",100,0)"),
               
               array("id"=> "e3",
               "label" => "fourth line",
@@ -109,15 +116,14 @@ class SigmaJsSchemaController extends Controller
               "target" => "n0",
               "size" => 1,
               "type" => "curvedArrow",
-              "color" => `rgb($,100,0)`),
+              "color" => "rgb(".checkcolor($pricearray[3][1]).",100,0)"),
               
               array("id"=> "e4",
               "label" => "fifth line",
               "source" => "n2",
               "target" => "n1",
               "size" => 1,
-              "type" => "",
-              "color" => `rgb($,100,0)`),
+              "color" => "rgb(".checkcolor($pricearray[3][2]).",100,0)"),
               
               array("id"=> "e5",
               "label" => "sixth line",
@@ -125,15 +131,14 @@ class SigmaJsSchemaController extends Controller
               "target" => "n2",
               "size" => 1,
               "type" => "curvedArrow",
-              "color" => `rgb($,100,0)`),
+              "color" => "rgb(".checkcolor($pricearray[2][3]).",100,0)"),
               
               array("id"=> "e6",
               "label" => "seventh line",
               "source" => "n0",
               "target" => "n5",
               "size" => 1,
-              "type" => "",
-              "color" => `rgb($,100,0)`),
+              "color" => "rgb(".checkcolor($pricearray[1][6]).",100,0)"),
               
               array("id"=> "e7",
               "label" => "eigth line",
@@ -141,15 +146,14 @@ class SigmaJsSchemaController extends Controller
               "target" => "n0",
               "size" => 1,
               "type" => "curvedArrow",
-              "color" => `rgb($,100,0)`),
+              "color" => "rgb(".checkcolor($pricearray[6][1]).",100,0)"),
               
               array("id"=> "e8",
               "label" => "ninth line",
               "source" => "n2",
               "target" => "n3",
               "size" => 1,
-              "type" => "",
-              "color" => `rgb($,100,0)`),
+              "color" => "rgb(".checkcolor($pricearray[3][4]).",100,0)"),
               
               array("id"=> "e9",
               "label" => "tenth line",
@@ -157,15 +161,14 @@ class SigmaJsSchemaController extends Controller
               "target" => "n2",
               "size" => 1,
               "type" => "curvedArrow",
-              "color" => `rgb($,100,0)`),
+              "color" => "rgb(".checkcolor($pricearray[4][3]).",100,0)"),
               
               array("id"=> "e10",
               "label" => "eleventh line",
               "source" => "n3",
               "target" => "n4",
               "size" => 1,
-              "type" => "",
-              "color" => `rgb($,100,0)`),
+              "color" => "rgb(".checkcolor($pricearray[4][5]).",100,0)"),
               
               array("id"=> "e11",
               "label" => "twelfth line",
@@ -173,15 +176,14 @@ class SigmaJsSchemaController extends Controller
               "target" => "n3",
               "size" => 1,
               "type" => "curvedArrow",
-              "color" => `rgb($,100,0)`),
+              "color" => "rgb(".checkcolor($pricearray[5][4]).",100,0)"),
               
               array("id"=> "e12",
               "label" => "thirteenth line",
               "source" => "n4",
               "target" => "n5",
               "size" => 1,
-              "type" => "",
-              "color" => `rgb($,100,0)`),
+              "color" => "rgb(".checkcolor($pricearray[5][6]).",100,0)"),
               
               array("id"=> "e13",
               "label" => "fourteenth line",
@@ -189,15 +191,14 @@ class SigmaJsSchemaController extends Controller
               "target" => "n4",
               "size" => 1,
               "type" => "curvedArrow",
-              "color" => `rgb($,100,0)`),
+              "color" => "rgb(".checkcolor($pricearray[6][5]).",100,0)"),
               
               array("id"=> "e14",
               "label" => "fifteenth line",
               "source" => "n3",
               "target" => "n1",
               "size" => 1,
-              "type" => "dotted",
-              "color" => `rgb($,100,0)`),
+              "color" => "rgb(".checkcolor($pricearray[4][2]).",100,0)"),
               
               array("id"=> "e15",
               "label" => "sixteenth line",
@@ -205,7 +206,7 @@ class SigmaJsSchemaController extends Controller
               "target" => "n3",
               "size" => 1,
               "type" => "curvedArrow",
-              "color" => `rgb($,100,0)`)
+              "color" => "rgb(".checkcolor($pricearray[2][4]).",100,0)")
             )
             
             );
@@ -215,7 +216,6 @@ class SigmaJsSchemaController extends Controller
             return $jsondata;
             
     }
-    
   
 
     
