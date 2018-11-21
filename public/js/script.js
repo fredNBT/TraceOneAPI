@@ -75,13 +75,14 @@ sigma.parsers.json(
     },
     settings: {
       edgeColor: 'default',
-      defaultNodeColor: '#ec5148',
-      defaultEdgeColor: '#dbc09b',
+      defaultNodeColor: '#7CB5EC',
+      defaultEdgeColor: '#CDD6EA',
+      defaultLabelColor: '#070C12',
       font: "calibri",
       labelSize: "proportional",
+      labelColor: "#070C12",
       sideMargin: 6,
       zoomMax: 1,
-      zoomMin:1,
       autoResize: "true",
       autoRescale: "true"
     }
@@ -114,14 +115,14 @@ sigma.parsers.json(
         if (toKeep[n.id])
           n.color = n.originalColor;
         else
-          n.color = '#eee';
+          n.color = '#080E16';
       });
 
       s.graph.edges().forEach(function(e) {
         if (toKeep[e.source] && toKeep[e.target])
           e.color = e.originalColor;
         else
-          e.color = '#eee';
+          e.color = '#080E16';
       });
       s.refresh()
     });

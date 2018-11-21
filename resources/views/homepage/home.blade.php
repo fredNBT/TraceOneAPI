@@ -96,13 +96,13 @@
     <div class="PageCenter">
 
     <div class="linecontainer">
-      <div class="linegraphborder">
+      <div class="linegraphborder1">
         <div id="Chart1" class="LineChart" >chart 1</div>
       </div>
-      <div class="linegraphborder">
+      <div class="linegraphborder2">
         <div id="Chart2" class="LineChart" >chart 2</div>
       </div>
-      <div class="linegraphborder">
+      <div class="linegraphborder3">
         <div id="Chart3" class="LineChart" >chart 3</div>
       </div>
     </div>
@@ -121,13 +121,13 @@
 
 
     <div class="linecontainer">
-      <div class="linegraphborder">
+      <div class="linegraphborder1">
         <div id="Chart4" class="LineChart" >chart 4</div>
       </div>
-      <div class="linegraphborder">
+      <div class="linegraphborder2">
         <div id="Chart5" class="LineChart" >chart 5</div>
       </div>
-      <div class="linegraphborder">
+      <div class="linegraphborder3">
         <div id="Chart6" class="LineChart" >chart 6</div>
       </div>
     </div>
