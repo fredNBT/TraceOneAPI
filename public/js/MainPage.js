@@ -85,7 +85,7 @@ function UpdateJSON(start){
 //Create the XHR Object
 let xhr = new XMLHttpRequest;
    //Call the open function, GET-type of request, url, true-asynchronous
- xhr.open('GET', '../public/api/time/' + start , true)
+ xhr.open('GET', '/api/time/' + start , true)
    //call the onload 
     xhr.onload = function() 
        {
@@ -109,7 +109,7 @@ let xhr = new XMLHttpRequest;
     //Create the XHR Object
     let xhr = new XMLHttpRequest;
        //Call the open function, GET-type of request, url, true-asynchronous
-     xhr.open('GET', '../public/api/SigmaJsSchema/' + start , true)
+     xhr.open('GET', '/api/SigmaJsSchema/' + start , true)
        //call the onload 
         xhr.onload = function() 
            {
@@ -130,7 +130,7 @@ function UpdateSolar(start) {
   //Create the XHR Object
   let xhr = new XMLHttpRequest;
   //Call the open function, GET-type of request, url, true-asynchronous
-  xhr.open('GET', '../public/api/solarcontroller/' + start, true)
+  xhr.open('GET', '/api/solarcontroller/' + start, true)
   //call the onload 
   xhr.onload = function () {
     //check if the status is 200(means everything is okay)
@@ -153,7 +153,7 @@ function UpdateSun(start) {
   //Create the XHR Object
   let xhr = new XMLHttpRequest;
   //Call the open function, GET-type of request, url, true-asynchronous
-  xhr.open('GET', '../public/api/suncontroller/' + start, true)
+  xhr.open('GET', '/api/suncontroller/' + start, true)
   //call the onload 
   xhr.onload = function () {
     //check if the status is 200(means everything is okay)
@@ -197,7 +197,7 @@ function UpdateSun(start) {
     function MinusSolarPanel(val){
       $.ajax({
         method:'POST',
-        url:'../public/api/solarcontroller/'+val,
+        url:'/api/solarcontroller/'+val,
         success:function(data){
          console.log('made it');
          console.log(data);
@@ -212,7 +212,7 @@ function UpdateSun(start) {
      function PlusSolarPanel(val){
        $.ajax({
          method:'POST',
-         url:'../public/api/solarcontrolleradd/'+val,
+         url:'/api/solarcontrolleradd/'+val,
          success:function(data){
           console.log('Add Solar Panel');
           console.log(data);
