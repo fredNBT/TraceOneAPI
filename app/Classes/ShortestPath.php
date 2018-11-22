@@ -34,13 +34,9 @@ public static function MakeShortestPath($CurrentPowerUsage)
 
         
        $CurrentPowerArray = ShortestPath::MakeArray($CurrentPowerUsage);
-
        $ComputedPower = ShortestPath::datasorter($CurrentPowerArray);
 
-
         return $ComputedPower;
-
-    
     }
 
     public static function MakeArray($CurrentPowerUsage)
@@ -84,6 +80,7 @@ public static function MakeShortestPath($CurrentPowerUsage)
                 }
             }
         };
+
         return $_distArr;
     }
 
@@ -128,9 +125,9 @@ public static function MakeShortestPath($CurrentPowerUsage)
         
     }
 
-    public static function runtransaction($power,$a,$b)
+    /* public static function runtransaction($power,$a,$b)
     {
-        global $_distArr;
+         global $_distArr;
         $_distArr = array();
         $_distArr[1][2] = 2;
         $_distArr[1][3] = 2;
@@ -150,19 +147,19 @@ public static function MakeShortestPath($CurrentPowerUsage)
         $_distArr[6][1] = 2;
         $_distArr[6][3] = 2;
         $_distArr[6][5] = 2;
-
+ 
        
-        if ($power > 0 )
+        if ($power > 0 ){
         for( $i = 0; $i < $power; $i++ )
         {
             $path = ShortestPath::runalgo($_distArr,$a,$b);
             $lol = array_pop($path);
-            ShortestPath::updateDistance($path,$_distArr); 
+            ShortestPath::updateDistance($path,$_distArr)); 
            
-        }
+        }}
         
     }
-
+ */
     public static function datasorter($powerneeded)
     {
         global $_distArr;
@@ -213,10 +210,28 @@ public static function MakeShortestPath($CurrentPowerUsage)
                $price = array_pop($price);
                $pricearray[$key1] = $price;
             }
- 
+        
             $lowestprice = min($pricearray);
             $lowestkey = array_keys($pricearray, $lowestprice)[0]; // key of the cheapest offer for each bid
-            ShortestPath::runtransaction($bid,$lowestkey,$key);
+
+          
+
+            $power = $bid;
+            $a = $lowestkey;
+            $b = $key;
+
+           
+
+            if ($power > 0 ){
+                for( $i = 0; $i < $power; $i++ )
+                {
+                    $path = ShortestPath::runalgo($_distArr,$a,$b);
+                    $lol = array_pop($path);
+                    $answer = ShortestPath::updateDistance($path,$_distArr); 
+                   return $answer;
+                }}
+
+            //ShortestPath::runtransaction($bid,$lowestkey,$key);
         } 
 
         
