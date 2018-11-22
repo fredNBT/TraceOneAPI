@@ -1,24 +1,32 @@
 let MinSpeed = 30;
 let HourSpeed = 1;
+let TimerSpeed = 5000;
 
 let timer = document.getElementById('timer');
 let day = 1;
  let hour = 10;
  let minute = 50;
 
-let x = setInterval(function() {
- let start = `2007-01-${timepad(day)} ${timepad(hour)}:${timepad(minute)}:00.000`;
- timer.innerHTML=start;
- updateminute();
- checkminute();
- checkhour();
- UpdateJSON(start);
- UpdatedataJSON(start);
- UpdateSolar(start);
- UpdateSun(start);
- 
+ function TimerLoop(){
+
+  let start = `2007-01-${timepad(day)} ${timepad(hour)}:${timepad(minute)}:00.000`;
+  timer.innerHTML=start;
+  updateminute();
+  checkminute();
+  checkhour();
+  UpdateJSON(start);
+  UpdatedataJSON(start);
+  UpdateSolar(start);
+  UpdateSun(start);
+  console.log(TimerSpeed)
+
  }
-,3000 )
+
+let x = setInterval(function() {
+  TimerLoop();
+
+ }
+,TimerSpeed )
 
 function timepad(y) 
 {
@@ -219,4 +227,18 @@ function UpdateSun(start) {
       function Cheeter(){
          MinSpeed = 60;
          HourSpeed = 5;
+         x.setInterval = 3000;
+         myTimer = setInterval(myFn, 4000);
+
       }
+
+      function Turtle(){
+        MinSpeed = 5;
+        HourSpeed = 1;
+     }
+
+     function Pause(){
+     
+        clearInterval(x);
+
+   }

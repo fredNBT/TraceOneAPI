@@ -92,7 +92,11 @@
      
       
         <div class="timer" id="timer"></div>
+        <button onclick="Pause()">Pause</button>
+        <button onclick="Turtle()">Turtle</button>
         <button onclick="Cheeter()">Cheeter</button>
+
+        
     </div>
    
     <div class="PageCenter">
