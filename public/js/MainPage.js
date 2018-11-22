@@ -161,19 +161,24 @@ function MinusSolarPanel(val){
    headers: {
     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 }
+ })
 
-function AddSolarPanel(val){
+}
+
+
+
+
+function PlusSolarPanel(val){
   $.ajax({
     method:'POST',
     url:'../public/api/solarcontrolleradd/'+val,
     success:function(data){
-     console.log('solar Add');
+     console.log('Add Solar Panel');
      console.log(data);
     },
     headers: {
      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
  }
-
- })
-
-}
+  })
+ 
+ }
