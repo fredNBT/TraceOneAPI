@@ -54,12 +54,13 @@ class StatsViewer {
           //  TextToReturn = '<div class="SolarBoxes" style="display:flex;" >';
             
           TextToReturn += '<div class="SolarBoxes" style="display:flex;  margin:10px;" >';
-          TextToReturn += '<button style="color:white; background-color: Transparent;" onclick="MinusSolarPanel()" >-</button>'
+         
             $.each(value, function (index, value, ) {
 
                 
                 
                 if (index === 'House'){
+                    TextToReturn += '<button style="color:white; background-color: Transparent;" onclick="MinusSolarPanel(this.value)" value=" ' + value+  ' " >-</button>'
                 TextToReturn += '<p style="padding-right: 20px;color:  #6B6F73;">' + value + '</p>';
                 }
 

@@ -68,7 +68,7 @@ class solarcontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        var_dump('Im in update');
     }
 
     /**

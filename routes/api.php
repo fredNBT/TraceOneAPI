@@ -39,6 +39,12 @@ Route::get('solarcontroller{time}', [
 ]);
 
 
+Route::post('solarcontroller{house}', [
+    'house' => 'solarcontroller@update'
+]);
+
+
+
 
 
 

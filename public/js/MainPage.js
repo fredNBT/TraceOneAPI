@@ -150,7 +150,8 @@ function UpdateLinceCharts(ResponceText) {
 }
 
 
-function MinusSolarPanel(){
+function MinusSolarPanel(val){
+ 
 
-  console.log('MinusSolarPanel');
+  console.log(val);
 }
