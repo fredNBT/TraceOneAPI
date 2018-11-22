@@ -39,8 +39,9 @@
      checkminute();
      checkhour();
    
-     UpdateJSON(start);
-     UpdatedataJSON();
+     //UpdateJSON(start);
+    // UpdatedataJSON();
+     UpdateSolar(start);
      
      }
    ,1000 )
@@ -108,8 +109,33 @@
    
        }
 
+          function UpdateSolar(start){
+    //Create the XHR Object
+    let xhr = new XMLHttpRequest;
+       //Call the open function, GET-type of request, url, true-asynchronous
+     xhr.open('GET', '../public/api/solarcontroller/' + start , true)
+       //call the onload 
+        xhr.onload = function() 
+           {
+               //check if the status is 200(means everything is okay)
+               if (this.status === 200) 
+                   {
+                  
+                       //return server response as an object with JSON.parse
+                       let stats = document.getElementById('stats');
+                      
+                      let StatsView2 = new StatsViewer();
+                      console.log( StatsView2.FormatedSolarHtml(this.responseText));
+                       stats.innerHTML = StatsView2.FormatedSolarHtml(this.responseText);
+           } 
+                   }
+       //call send
+       xhr.send();
+   
+       }
+
        
-       function
+       
    
    
       

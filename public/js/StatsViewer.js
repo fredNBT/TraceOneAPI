@@ -38,6 +38,50 @@ class StatsViewer {
 
         return  TextToReturn ;
 
+
+  
+    }
+
+    FormatedSolarHtml(ResponceText){
+        let TextToReturn = '<div class="Solar">';
+
+
+        let responceobj = JSON.parse(ResponceText);
+       let i = 0;
+                    
+
+        $.each(responceobj, function (index, value, ) {
+          //  TextToReturn = '<div class="SolarBoxes" style="display:flex;" >';
+            
+          TextToReturn += '<div class="SolarBoxes" style="display:flex;  margin:10px;" >';
+          TextToReturn += '<button>+</button>'
+            $.each(value, function (index, value, ) {
+
+                
+                
+                if (index === 'House'){
+                TextToReturn += '<p>' + value + '</p>';
+                }
+
+                if (index === 'SolarPannels'){
+                    TextToReturn += '<p>' + value + '</p>';
+                    }
+               
+            });
+            TextToReturn += '<button>-</button>'
+            TextToReturn += ' </div>';
+           
+          //  TextToReturn += ' </div>';
+           
+         
+        });
+
+
+        
+        TextToReturn += ' </div>';
+
+        return TextToReturn;
+
     }
 
     

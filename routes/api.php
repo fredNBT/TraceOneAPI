@@ -33,6 +33,11 @@ Route::get('Api\SigmaJsSchemaController{time}', [
     'time' => 'Api\SigmaJsSchemaController@show'
 ]);
 
+Route::resource('solarcontroller', 'Api\solarcontroller');
+Route::get('solarcontroller{time}', [
+    'time' => 'solarcontroller@show'
+]);
+
 
 
 
