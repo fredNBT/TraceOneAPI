@@ -44,8 +44,7 @@ class LineChart {
                 renderTo: self.MountTo,
                 type: 'spline',
                 backgroundColor: 'rgba(0, 4, 19, 0.75)',
-                height: '70%',
-                width: null,
+
 
 
             },

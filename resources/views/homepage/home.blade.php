@@ -74,6 +74,10 @@
     
     <script src="{{ asset('js/sigma.js-1.2.1/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edgehovers.dashed.js') }}"></script>
     <script src="{{ asset('js/sigma.js-1.2.1/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edges.dotted.js') }}"></script>
+    
+    <script src="{{ asset('js/circles.js') }}"></script>
+    
+    
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -109,7 +113,29 @@
     <div class="centercontainer">
     <div class="PowerStats">
       <p class="PowerStatsHeader">Power Usage Totals</p>
-    <div class="stats" id="stats">Raw stats</div>
+      <div class="stats" id="stats"></div>
+    <div class="canvas">
+
+        <div class="textcontainer">
+            <div class="text">house 1</div>
+        <div class="circle" id="circles-1"></div></div>
+        <div class="textcontainer">
+            <div class="text">house 2</div>
+        <div class="circle" id="circles-2"></div></div>
+        <div class="textcontainer">
+            <div class="text">house 3</div>
+        <div class="circle" id="circles-3"></div></div>
+        <div class="textcontainer">
+            <div class="text">house 4</div>
+        <div class="circle" id="circles-4"></div></div>
+        <div class="textcontainer">
+            <div class="text">house 5</div>
+        <div class="circle" id="circles-5"></div></div>
+        <div class="textcontainer">
+            <div class="text">house 6</div>
+        <div class="circle" id="circles-6"></div></div>
+
+    </div> 
 
     </div>
     <div class="canvasborder">
@@ -130,7 +156,7 @@
       </div>
     </div>
 
-    </div> 
+
 
 
 
@@ -138,6 +164,7 @@
 
 </body>
   {{-- js entry Point --}}
+  <script src="{{ asset('js/createCircles.js') }}"></script>
   <script src="{{ asset('js/script.js') }}"></script>
   <script src="https://code.highcharts.com/highcharts.src.js"></script>
   <script src="{{ asset('js/HighCharts.js') }}"></script>

@@ -23,9 +23,9 @@ use DB;
     }   */
 
      $Powermap = array(
-      "House1" => 1,
-      "House2" => -2,
-      "House3" => 2,
+      "House1" => 10,
+      "House2" => -5,
+      "House3" => 4,
       "House4" => -3,
       "House5" => -3,
       "House6" => 5,

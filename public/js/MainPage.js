@@ -10,7 +10,7 @@ let x = setInterval(function() {
  checkminute();
  checkhour();
  UpdateJSON(start);
- UpdatedataJSON(start);
+ /* UpdatedataJSON(start); */
  
  }
 ,3000 )
@@ -92,7 +92,7 @@ let xhr = new XMLHttpRequest;
    //call send
    xhr.send();
    }
-   function UpdatedataJSON(start){
+  /*  function UpdatedataJSON(start){
     //Create the XHR Object
     let xhr = new XMLHttpRequest;
        //Call the open function, GET-type of request, url, true-asynchronous
@@ -111,7 +111,7 @@ let xhr = new XMLHttpRequest;
        //call send
        xhr.send();
    
-       }
+       } */
    
 
    function UpdateLinceCharts(ResponceText){

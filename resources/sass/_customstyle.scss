@@ -74,7 +74,7 @@ body{
 .linecontainer{
   display: flex;
   flex-flow: row wrap;
-  width: 20%;
+  width: 33.34%;
   height: 100%;
 
 }
@@ -88,18 +88,28 @@ body{
   // border-width: 10px;
 
 }
-
+p{
+  text-align: center;
+  margin-bottom: 0%;
+}
 
 .stats{
-  margin-left: 1vw;
-  border-width: 1px; 
-  width: 10vw;
-  margin-right: 10vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   color: white;
+  width: 100%;
+
+}
+#stats{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
 
 .Combo{
   display: flex;
+  flex-direction: column;
   width: 20%
 }
 
@@ -110,13 +120,13 @@ h3{
 .Pos{
   text-align: center;
   color: lightblue;
-  padding-left: 50px;
+
 }
 
 .Neg{
   text-align: center;
   color: red;
-  padding-left: 50px;
+
 }
 .PageCenter{
   display: flex;
@@ -135,11 +145,9 @@ h3{
 //   width: auto !important;
 // }
 .PowerStatsHeader{
-  color: white;
-  size: 2rem;
+  color: rgba(255, 255, 255, 0.5);
   border-bottom: 1px solid lightblue;
   text-align: center;
-  margin-bottom: 0%;
 }
 
 
@@ -152,3 +160,41 @@ h3{
   border-width: 5px;
 }
 
+.canvas {
+display: flex;
+justify-content: space-between;
+width: 100%;
+}
+
+.circle {
+  display: inline-block;
+  margin: 1em;
+}
+
+.circles-decimals {
+  font-size: .4em;
+}
+
+.circles-text {
+  font-size: 1em !important;
+  color:rgba(255, 255, 255, 0.5);
+}
+.textcontainer{
+  width: 100%;
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.text{
+color: rgba(255, 255, 255, 0.5);
+}
+
+.buttons {
+  margin-top: 1em;
+}
+
+button {
+  font-size: .8em;
+  padding: .3em .8em;
+}

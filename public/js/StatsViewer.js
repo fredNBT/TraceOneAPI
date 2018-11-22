@@ -11,17 +11,20 @@ class StatsViewer {
 
 
          let responceobj = JSON.parse(ResponceText);
+        let i = 0;
+                     
 
-
-        
-         $.each(responceobj, function (index, value) {
-           //console.log(value);
+         $.each(responceobj, function (index, value, ) {
 
            if (value >= 0 ){
-                TextToReturn +=   '<div class="Combo"><p>' + index + '</p><div class="Pos">' + '+' + value +'</div></div>';
+            circles[i].update(value),
+            circles[i].updateColors(['rgba(10, 84, 114, 0.5)','rgba(56, 175, 8, 01)']),
+            i++;
            }
            else{
-            TextToReturn +=   '<div class="Combo"><p>' + index + '</p><div class="Neg">'+ value+'</div></div>';
+            circles[i].update(value-value-value),
+            circles[i].updateColors(['rgba(10, 84, 114, 0.5)','rgba(198, 35, 35, 1)']),
+            i++;
            }
          });
 

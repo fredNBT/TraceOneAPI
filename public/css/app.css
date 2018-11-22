@@ -10576,7 +10576,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
-  width: 20%;
+  width: 33.34%;
   height: 100%;
 }
 
@@ -10586,18 +10586,43 @@ body {
   background-color: rgba(0, 4, 19, 0.75);
 }
 
+p {
+  text-align: center;
+  margin-bottom: 0%;
+}
+
 .stats {
-  margin-left: 1vw;
-  border-width: 1px;
-  width: 10vw;
-  margin-right: 10vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   color: white;
+  width: 100%;
+}
+
+#stats {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .Combo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 20%;
 }
 
@@ -10608,13 +10633,11 @@ h3 {
 .Pos {
   text-align: center;
   color: lightblue;
-  padding-left: 50px;
 }
 
 .Neg {
   text-align: center;
   color: red;
-  padding-left: 50px;
 }
 
 .PageCenter {
@@ -10638,11 +10661,9 @@ h3 {
 }
 
 .PowerStatsHeader {
-  color: white;
-  size: 2rem;
+  color: rgba(255, 255, 255, 0.5);
   border-bottom: 1px solid lightblue;
   text-align: center;
-  margin-bottom: 0%;
 }
 
 .PowerStats {
@@ -10654,6 +10675,55 @@ h3 {
      border-image: linear-gradient(#a6a6b0, #ebe9f9, #a6a6b0) 20;
   border-style: solid;
   border-width: 5px;
+}
+
+.canvas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.circle {
+  display: inline-block;
+  margin: 1em;
+}
+
+.circles-decimals {
+  font-size: .4em;
+}
+
+.circles-text {
+  font-size: 1em !important;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.textcontainer {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.text {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.buttons {
+  margin-top: 1em;
+}
+
+button {
+  font-size: .8em;
+  padding: .3em .8em;
 }
 
 .navbar-laravel {
