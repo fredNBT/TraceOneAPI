@@ -149,7 +149,9 @@ function UpdateSun(start) {
     if (this.status === 200) {
 
       let Sunnyness = new StatsViewer();
-      console.log(Sunnyness.FormatedSunHtml(this.responseText));
+      let CurrentWeather = Sunnyness.FormatedSunHtml(this.responseText);
+      document.getElementById('weather').innerHTML  = CurrentWeather;
+      console.log(CurrentWeather);
 
       //return server response as an object with JSON.parse
    

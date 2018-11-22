@@ -86,14 +86,11 @@
   </head>
    
   <body >
-
-
-
-
-
-
     
     <div class="TitleBar">
+      <div id="weather" style="width:20%; height:100%; "></div>
+     
+      
         <div class="timer" id="timer"></div>
     </div>
    

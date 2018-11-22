@@ -49,7 +49,6 @@ class StatsViewer {
                     TextToReturn += '<button style="color:white; background-color: Transparent;"onclick="PlusSolarPanel(this.value)"value="' + value + '" >+</button>';
                     TextToReturn += '<p style="padding-right: 20px;color:  #6B6F73;">' + value + '</p>';
                 }
-
                 if (index === 'SolarPannels') {
                     TextToReturn += '<p style="color: #38AF08;">' + value + '</p>';
                 }
@@ -65,19 +64,23 @@ class StatsViewer {
 
 
     FormatedSunHtml(ResponceText) {
-
-        let TextToReturn = '<div class="stats">';
-
-
+        let TextToReturn = '';
         let responceobj = JSON.parse(ResponceText);
         let i = 0;
-        //Power_MW_
 
         $.each(responceobj, function (index, value, ) {
             $.each(value, function (index, value, ) {
                
                 if (index === 'Power_MW_') {
-                    TextToReturn += value;
+
+                    if(value > 10){
+                    TextToReturn += '<div style="display:flex;"><img src="../public/img/sun.png"><h3 style="color:white;">' + value + '</h3></div>';
+                }else if (value <10 && value > 2){
+                    TextToReturn += '<div style="display:flex;"><img src="../public/img/cloud.png"><h3 style="color:white;">' + value + '</h3></div>';
+                }
+                else if (value < 2){
+                    TextToReturn += '<div style="display:flex;"><img src="../public/img/moon.png"><h3 style="color:white;">' + value + '</h3></div>';
+                }
                 }      
             });
         
