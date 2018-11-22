@@ -54,21 +54,23 @@ class StatsViewer {
           //  TextToReturn = '<div class="SolarBoxes" style="display:flex;" >';
             
           TextToReturn += '<div class="SolarBoxes" style="display:flex;  margin:10px;" >';
-          TextToReturn += '<button>+</button>'
+          TextToReturn += '<button style="color:white; background-color: Transparent;" onclick="MinusSolarPanel()" >-</button>'
             $.each(value, function (index, value, ) {
 
                 
                 
                 if (index === 'House'){
-                TextToReturn += '<p>' + value + '</p>';
+                TextToReturn += '<p style="padding-right: 20px;color:  #6B6F73;">' + value + '</p>';
                 }
 
                 if (index === 'SolarPannels'){
-                    TextToReturn += '<p>' + value + '</p>';
+                    TextToReturn += '<p style="color: #38AF08;">' + value + '</p>';
                     }
+                   
+                   
                
             });
-            TextToReturn += '<button>-</button>'
+            TextToReturn += '<button style="color:white; background-color: Transparent;" >+</button>'
             TextToReturn += ' </div>';
            
           //  TextToReturn += ' </div>';

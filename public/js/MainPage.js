@@ -119,7 +119,6 @@ function UpdateSolar(start) {
       let stats = document.getElementById('SolarStats');
 
       let StatsView2 = new StatsViewer();
-      console.log(StatsView2.FormatedSolarHtml(this.responseText));
       stats.innerHTML = StatsView2.FormatedSolarHtml(this.responseText);
     }
   }
@@ -148,4 +147,10 @@ function UpdateLinceCharts(ResponceText) {
     }
   }
   )
+}
+
+
+function MinusSolarPanel(){
+
+  console.log('MinusSolarPanel');
 }
