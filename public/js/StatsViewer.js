@@ -74,14 +74,16 @@ class StatsViewer {
         //Power_MW_
 
         $.each(responceobj, function (index, value, ) {
-
-            TextToReturn += value;
-
-            if (index === 'Power_MW_') {
+            $.each(value, function (index, value, ) {
                
-            }
+                if (index === 'Power_MW_') {
+                    TextToReturn += value;
+                }      
+            });
+        
         });
-        TextToReturn += ' </div>';
+
+     
         return TextToReturn;
 
     }
