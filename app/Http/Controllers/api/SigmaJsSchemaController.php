@@ -24,29 +24,38 @@ class SigmaJsSchemaController extends Controller
       
       $pricearray = $ShortestPath->MakeShortestPath($Powermap);
       $jsondata = $this->makejson($pricearray);
-
-     
+    
        $old = getcwd(); // Save the current directory
       chdir("../public/js");
       $file = 'data.json';
       unlink($file);
       file_put_contents($file,$jsondata);
       chdir($old); // Restore the old working directory 
-      
-      //return $jsondata;
+        
+      return $pricearray;
     
     }
   
     public function makejson($pricearray)
     {
   
-      var_dump($pricearray);
-       function checkcolor($number){
+       function checkcolor($number)
+       {
+            
+            if ($number > 255)
+            {
+                  $number = 255;
+            } if ($number < 0)
+            {
+              return 0;
+             } else
+            {
             $number += exp($number);
             if ($number > 255){
                   $number = 255;
             }
             return $number;
+      }
       };
   
         $jsonarray = array
@@ -97,124 +106,126 @@ class SigmaJsSchemaController extends Controller
             "edges" => array(
   
               array("id"=> "e0",
-              "label" => "first line",
+              "label" => "price:".round($pricearray[1][2],3),
+              "labelcolor"=> "#ffffff",
               "source" => "n0",
               "target" => "n1",
               "size" => 1,
-              "color" => "rgb(".checkcolor($pricearray[1][2]).",100,0)"),
+              "color" => "rgb(".(255-checkcolor($pricearray[1][2])).",".(255-checkcolor(10*$pricearray[1][2])).",".(255-checkcolor(20*$pricearray[1][2])).")"),
               
               array("id"=> "e1",
-              "label" => "second line",
+              "label" => "price:".round($pricearray[2][1],3),
               "source" => "n1",
               "target" => "n0",
               "size" => 1,
               "type" => "curvedArrow",
-              "color" => "rgb(".checkcolor($pricearray[2][1]).",100,0)"),
+              "color" => "rgb(".(255-checkcolor($pricearray[2][1])).",".(255-checkcolor(10*$pricearray[2][1])).",".(255-checkcolor(20*$pricearray[2][1])).")"),
               
               array("id"=> "e2",
-              "label" => "third line",
+              "label" => "price:".round($pricearray[2][1],3),
               "source" => "n0",
               "target" => "n2",
               "size" => 1,
-              "color" => "rgb(".checkcolor($pricearray[1][3]).",100,0)"),
+              "color" => "rgb(".(255-checkcolor($pricearray[1][3])).",".(255-checkcolor(10*$pricearray[1][3])).",".(255-checkcolor(20*$pricearray[1][3])).")"),
               
               array("id"=> "e3",
-              "label" => "fourth line",
+              "label" => "price:".round($pricearray[3][1],3),
               "source" => "n2",
               "target" => "n0",
               "size" => 1,
               "type" => "curvedArrow",
-              "color" => "rgb(".checkcolor($pricearray[3][1]).",100,0)"),
+              "color" => "rgb(".(255-checkcolor($pricearray[3][1])).",".(255-checkcolor(10*$pricearray[3][1])).",".(255-checkcolor(20*$pricearray[3][1])).")"),
               
               array("id"=> "e4",
-              "label" => "fifth line",
+              "label" => "price:".round($pricearray[3][2],3),
               "source" => "n2",
               "target" => "n1",
               "size" => 1,
-              "color" => "rgb(".checkcolor($pricearray[3][2]).",100,0)"),
-              
+              "color" => "rgb(".(255-checkcolor($pricearray[3][2])).",".(255-checkcolor(10*$pricearray[3][2])).",".(255-checkcolor(20*$pricearray[3][2])).")"),
+
               array("id"=> "e5",
-              "label" => "sixth line",
+              "label" => "price:".round($pricearray[2][3],3),
               "source" => "n1",
               "target" => "n2",
               "size" => 1,
               "type" => "curvedArrow",
-              "color" => "rgb(255,100,0)"),
+              "color" => "rgb(".(255-checkcolor($pricearray[2][3])).",".(255-checkcolor(10*$pricearray[2][3])).",".(255-checkcolor(20*$pricearray[2][3])).")"),
               
               array("id"=> "e6",
-              "label" => "seventh line",
+              "label" => "price:".round($pricearray[1][6],3),
               "source" => "n0",
               "target" => "n5",
               "size" => 1,
-              "color" => "rgb(".checkcolor($pricearray[1][6]).",100,0)"),
+              "color" => "rgb(".(255-checkcolor($pricearray[1][6])).",".(255-checkcolor(10*$pricearray[1][6])).",".(255-checkcolor(20*$pricearray[1][6])).")"),
               
               array("id"=> "e7",
-              "label" => "eigth line",
+              "label" => "price:".round($pricearray[6][1],3),
               "source" => "n5",
               "target" => "n0",
               "size" => 1,
               "type" => "curvedArrow",
-              "color" => "rgb(".checkcolor($pricearray[6][1]).",100,0)"),
+              "color" => "rgb(".(255-checkcolor($pricearray[6][1])).",".(255-checkcolor(10*$pricearray[6][1])).",".(255-checkcolor(20*$pricearray[6][1])).")"),
               
               array("id"=> "e8",
-              "label" => "ninth line",
+              "label" => "price:".round($pricearray[3][4],3),
               "source" => "n2",
               "target" => "n3",
               "size" => 1,
-              "color" => "rgb(".checkcolor($pricearray[3][4]).",100,0)"),
+              "color" => "rgb(".(255-checkcolor($pricearray[3][4])).",".(255-checkcolor(10*$pricearray[3][4])).",".(255-checkcolor(20*$pricearray[3][4])).")"),
               
               array("id"=> "e9",
-              "label" => "tenth line",
+              "label" => "price:".round($pricearray[4][3],3),
               "source" => "n3",
               "target" => "n2",
               "size" => 1,
               "type" => "curvedArrow",
-              "color" => "rgb(".checkcolor($pricearray[4][3]).",100,0)"),
+              "color" => "rgb(".(255-checkcolor($pricearray[4][3])).",".(255-checkcolor(10*$pricearray[4][3])).",".(255-checkcolor(20*$pricearray[4][3])).")"),
               
               array("id"=> "e10",
-              "label" => "eleventh line",
+              "label" => "price:".round($pricearray[4][5],3),
               "source" => "n3",
               "target" => "n4",
               "size" => 1,
-              "color" => "rgb(".checkcolor($pricearray[4][5]).",100,0)"),
+              "color" => "rgb(".(255-checkcolor($pricearray[4][5])).",".(255-checkcolor(10*$pricearray[4][5])).",".(255-checkcolor(20*$pricearray[4][5])).")"),
               
               array("id"=> "e11",
-              "label" => "twelfth line",
+              "label" => "price:".round($pricearray[5][4],3),
               "source" => "n4",
               "target" => "n3",
               "size" => 1,
+              "labelcolor" => "#ffffff",
               "type" => "curvedArrow",
-              "color" => "rgb(".checkcolor($pricearray[5][4]).",100,0)"),
+              "color" => "rgb(".(255-checkcolor($pricearray[5][4])).",".(255-checkcolor(10*$pricearray[5][4])).",".(255-checkcolor(20*$pricearray[5][4])).")"),
               
               array("id"=> "e12",
-              "label" => "thirteenth line",
+              "label" => "price:".round($pricearray[5][6],3),
               "source" => "n4",
               "target" => "n5",
               "size" => 1,
-              "color" => "rgb(".checkcolor($pricearray[5][6]).",100,0)"),
+              "color" => "rgb(".(255-checkcolor($pricearray[5][6])).",".(255-checkcolor(10*$pricearray[5][6])).",".(255-checkcolor(20*$pricearray[5][6])).")"),
               
               array("id"=> "e13",
-              "label" => "fourteenth line",
+              "label" => "price:".round($pricearray[6][5],3),
               "source" => "n5",
               "target" => "n4",
               "size" => 1,
               "type" => "curvedArrow",
-              "color" => "rgb(".checkcolor($pricearray[6][5]).",100,0)"),
+              "color" => "rgb(".(255-checkcolor($pricearray[6][5])).",".(255-checkcolor(10*$pricearray[6][5])).",".(255-checkcolor(20*$pricearray[6][5])).")"),
               
               array("id"=> "e14",
-              "label" => "fifteenth line",
+              "label" => "price:".round($pricearray[4][2],3),
               "source" => "n3",
               "target" => "n1",
               "size" => 1,
-              "color" => "rgb(".checkcolor($pricearray[4][2]).",100,0)"),
+              "color" => "rgb(".(255-checkcolor($pricearray[4][2])).",".(255-checkcolor(10*$pricearray[4][2])).",".(255-checkcolor(20*$pricearray[4][2])).")"),
               
               array("id"=> "e15",
-              "label" => "sixteenth line",
+              "label" => "price:".round($pricearray[2][4],3),
               "source" => "n1",
               "target" => "n3",
               "size" => 1,
               "type" => "curvedArrow",
-              "color" => "rgb(".checkcolor($pricearray[2][4]).",100,0)")
+              "color" => "rgb(".(255-checkcolor($pricearray[2][4])).",".(255-checkcolor(10*$pricearray[2][4])).",".(255-checkcolor(20*$pricearray[2][4])).")"),
             )
             
             );

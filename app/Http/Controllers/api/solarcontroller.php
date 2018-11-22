@@ -68,9 +68,7 @@ class solarcontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        echo  "UPDATE [SolarPanels] SET SolarPannels = SolarPannels - 1 WHERE House='".$id."'";
-        $Sun = DB::update( "UPDATE [SolarPanels] SET SolarPannels = SolarPannels - 1 WHERE House='" . $id. "'");
-        return 'steve';
+        //
     }
 
     /**

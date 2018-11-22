@@ -9,6 +9,7 @@
     <title>Home</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+   
     <script src="{{ asset('js/sigma.js-1.2.1/src/sigma.core.js') }}"></script>
     <script src="{{ asset('js/sigma.js-1.2.1/src/conrad.js') }}"></script>
     <script src="{{ asset('js/sigma.js-1.2.1/src/utils/sigma.utils.js') }}"></script>
@@ -76,15 +77,14 @@
     <script src="{{ asset('js/sigma.js-1.2.1/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edges.dotted.js') }}"></script>
     
     <script src="{{ asset('js/circles.js') }}"></script>
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     
     
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
-  
-  <body>
+   
+  <body >
 
 
 
@@ -140,7 +140,7 @@
 
     </div>
     <div class="canvasborder">
-      {{-- canvas --}}<div id="container"></div>
+      {{-- canvas --}}<div id="container" style="background-color:aliceblue"></div>
     </div>
     </div>
 
@@ -157,7 +157,10 @@
       </div>
     </div>
 
-    <div id="SolarStats" class="SolarStats" style="color: white;"></div>
+
+
+<div id="pricearray" style="background-color:red"></div>
+
 
 
 </body>

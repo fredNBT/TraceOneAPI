@@ -25,7 +25,7 @@ class AlgoController extends Controller
    
      $old = getcwd(); // Save the current directory
     chdir("../public/js");
-    $file = 'data.json';
+    $file = 'data1.json';
     unlink($file);
     file_put_contents($file,$jsondata);
     chdir($old); // Restore the old working directory 
@@ -94,7 +94,7 @@ class AlgoController extends Controller
           "edges" => array(
 
             array("id"=> "e0",
-            "label" => "first line",
+            "label" => $pricearray[1][2],
             "source" => "n0",
             "target" => "n1",
             "size" => 1,

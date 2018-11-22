@@ -75,11 +75,11 @@ sigma.parsers.json(
     settings: {
       edgeColor: 'default',
       defaultNodeColor: '#7CB5EC',
-      defaultEdgeColor: '#CDD6EA',
-      defaultLabelColor: '#070C12',
+      defaultEdgeColor: '#ffffff',
+      defaultLabelColor: '#ffffff',
       font: "calibri",
       labelSize: "proportional",
-      labelColor: "#070C12",
+      labelColor: "#ffffff",
       sideMargin: 6,
       zoomMax: 1,
       autoResize: "true",
@@ -119,9 +119,9 @@ sigma.parsers.json(
 
       s.graph.edges().forEach(function(e) {
         if (toKeep[e.source] && toKeep[e.target])
-          e.color = e.originalColor;
+          e.color = "#ffffff";
         else
-          e.color = '#080E16';
+          e.color = "#ffffff";
       });
       s.refresh()
     });
@@ -142,10 +142,7 @@ sigma.parsers.json(
 
     // s.startForceAtlas2();
     
-    // setTimeout(function () {
-    //   console.log('stopping')
-    //   s.stopForceAtlas2()
-    //   }, 10000)
+     
     
     // setInterval(addNode, 3000)
   }
@@ -154,3 +151,7 @@ sigma.parsers.json(
 function addNode () {
   
 }
+
+setInterval(
+  s.refresh()
+ , 1000)

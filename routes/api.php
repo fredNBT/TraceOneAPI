@@ -39,12 +39,6 @@ Route::get('solarcontroller{time}', [
 ]);
 
 
-Route::post('solarcontroller/{id}', 'Api\solarcontroller@update');
-
-Route::post('solarcontrolleradd/{id}', 'Api\solarcontrolleradd@update');
-
-
-
 
 
 
