@@ -14,7 +14,7 @@ class SigmaJsSchemaController extends Controller
     public function show($time)
     {
 
-       $CurrentPowerUsage = new \App\Classes\PowerUsage();
+      $CurrentPowerUsage = new \App\Classes\PowerUsage();
 
       $ShortestPath = new \App\Classes\ShortestPath();
   
@@ -23,6 +23,7 @@ class SigmaJsSchemaController extends Controller
       $Powermap =  $CurrentPowerUsage->show($time);
       
       $pricearray = $ShortestPath->MakeShortestPath($Powermap);
+      
       $jsondata = $this->makejson($pricearray);
     
        $old = getcwd(); // Save the current directory
@@ -30,8 +31,7 @@ class SigmaJsSchemaController extends Controller
       $file = 'data.json';
       unlink($file);
       file_put_contents($file,$jsondata);
-      chdir($old); // Restore the old working directory  */
-
+      chdir($old); // Restore the old working directory 
         
       return $pricearray;
     
@@ -39,7 +39,7 @@ class SigmaJsSchemaController extends Controller
   
     public function makejson($pricearray)
     {
-  
+      
        function checkcolor($number)
        {
             
@@ -102,7 +102,14 @@ class SigmaJsSchemaController extends Controller
                     "x"=> 0,
                     "y"=> 30,
                     "size"=> 10,
-                    "type"=> "house")
+                    "type"=> "house"),
+
+              array("id" => "n6",
+                    "label"=> "GRID",
+                    "x"=> 60,
+                    "y"=> 20,
+                    "size"=> 20,
+                    "color" => "#ff0000")
             ),
             "edges" => array(
   
@@ -217,16 +224,23 @@ class SigmaJsSchemaController extends Controller
               "label" => "price:".round($pricearray[4][2],3),
               "source" => "n3",
               "target" => "n1",
-              "size" => 1,
+              "size" => 3,
               "color" => "rgb(".(255-checkcolor($pricearray[4][2])).",".(255-checkcolor(10*$pricearray[4][2])).",".(255-checkcolor(20*$pricearray[4][2])).")"),
               
               array("id"=> "e15",
               "label" => "price:".round($pricearray[2][4],3),
               "source" => "n1",
               "target" => "n3",
-              "size" => 1,
+              "size" => 3,
               "type" => "curvedArrow",
-              "color" => "rgb(".(255-checkcolor($pricearray[2][4])).",".(255-checkcolor(10*$pricearray[2][4])).",".(255-checkcolor(20*$pricearray[2][4])).")"),
+              "color" => "rgb(".(255-checkcolor($pricearray[2][4])).",".(255-checkcolor(10*$pricearray[2][4])).",".(255-checkcolor(20*$pricearray[2][4])).")"), 
+              
+              array("id"=> "e16",
+              "label" => "price:".round($pricearray[7][4],3),
+              "source" => "n6",
+              "target" => "n3",
+              "size" => 3,
+              "color" => "rgb(".(255-checkcolor($pricearray[7][4])).",".(255-checkcolor(10*$pricearray[7][4])).",".(255-checkcolor(20*$pricearray[7][4])).")"),
             )
             
             );

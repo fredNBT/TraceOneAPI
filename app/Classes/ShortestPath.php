@@ -31,11 +31,14 @@ public static function MakeShortestPath($CurrentPowerUsage)
         $_distArr[6][1] = 0.5;
         $_distArr[6][3] = 0.5;
         $_distArr[6][5] = 0.5;
+        $_distArr[7][4] = 0.5;
 
         
        $CurrentPowerArray = ShortestPath::MakeArray($CurrentPowerUsage);
-       $ComputedPower = ShortestPath::datasorter($CurrentPowerArray);
 
+       $ComputedPower = ShortestPath::datasorter($CurrentPowerArray);
+       
+        
         return $ComputedPower;
     }
 
@@ -49,7 +52,8 @@ public static function MakeShortestPath($CurrentPowerUsage)
             3=>$CurrentPowerArray["House3"],
             4=>$CurrentPowerArray["House4"],
             5=>$CurrentPowerArray["House5"],
-            6=>$CurrentPowerArray["House6"]
+            6=>$CurrentPowerArray["House6"],
+            7=>100
         );
 
         return   $CurrentPowerArray;
@@ -162,6 +166,7 @@ public static function MakeShortestPath($CurrentPowerUsage)
  */
     public static function datasorter($powerneeded)
     {
+      
         global $_distArr;
         $_distArr = array();
         $_distArr[1][2] = 0.5;
@@ -182,6 +187,7 @@ public static function MakeShortestPath($CurrentPowerUsage)
         $_distArr[6][1] = 0.5;
         $_distArr[6][3] = 0.5;
         $_distArr[6][5] = 0.5;
+        $_distArr[7][4] = 5;
 
         $offerpower = array();
         $bidpower = array();
@@ -190,6 +196,7 @@ public static function MakeShortestPath($CurrentPowerUsage)
 
         foreach ($powerneeded as $key => $power) //splitting power into offers and bids
         {
+            
             if ($power > 0)
             {
                 $offerpower[$key] = $power;
@@ -200,17 +207,22 @@ public static function MakeShortestPath($CurrentPowerUsage)
             } 
         } 
 
+ 
+        
 
    
         foreach ($bidpower as $key => $bid)
         {
             foreach ($offerpower as $key1 => $offer)
             {
+              
+
                $price = ShortestPath::runalgo($_distArr,$key1,$key);
                $price = array_pop($price);
                $pricearray[$key1] = $price;
+              
             }
-        
+         
             $lowestprice = min($pricearray);
             $lowestkey = array_keys($pricearray, $lowestprice)[0]; // key of the cheapest offer for each bid
 
@@ -221,7 +233,7 @@ public static function MakeShortestPath($CurrentPowerUsage)
             $b = $key;
 
            
-
+            
             if ($power > 0 ){
                 for( $i = 0; $i < $power; $i++ )
                 {
