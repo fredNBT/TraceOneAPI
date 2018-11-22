@@ -1,7 +1,10 @@
+let MinSpeed = 30;
+let HourSpeed = 1;
+
 let timer = document.getElementById('timer');
 let day = 1;
  let hour = 10;
- let minute = 5;
+ let minute = 50;
 
 let x = setInterval(function() {
  let start = `2007-01-${timepad(day)} ${timepad(hour)}:${timepad(minute)}:00.000`;
@@ -27,11 +30,11 @@ function timepad(y)
 }
 function updateminute()
 {
- minute+=5;
+ minute+=MinSpeed;
 }
 function updatehour()
 {
- hour+=1;
+ hour+=HourSpeed;
  
 }
 function updateday()
@@ -211,4 +214,9 @@ function UpdateSun(start) {
       }
        })
       
+      }
+
+      function Cheeter(){
+         MinSpeed = 60;
+         HourSpeed = 5;
       }

@@ -92,6 +92,7 @@
      
       
         <div class="timer" id="timer"></div>
+        <button onclick="Cheeter()">Cheeter</button>
     </div>
    
     <div class="PageCenter">

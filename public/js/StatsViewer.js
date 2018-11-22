@@ -12,8 +12,6 @@ class StatsViewer {
 
         let responceobj = JSON.parse(ResponceText);
         let i = 0;
-
-
         $.each(responceobj, function (index, value, ) {
 
             if (value >= 0) {
