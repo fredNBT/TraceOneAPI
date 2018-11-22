@@ -38,6 +38,11 @@ Route::get('solarcontroller{time}', [
     'time' => 'solarcontroller@show'
 ]);
 
+Route::resource('suncontroller', 'Api\suncontroller');
+Route::get('suncontroller{time}', [
+    'time' => 'suncontroller@show'
+]);
+
 Route::post('solarcontroller/{id}', 'Api\solarcontroller@update');
 
 Route::post('solarcontrolleradd/{id}', 'Api\solarcontrolleradd@update');

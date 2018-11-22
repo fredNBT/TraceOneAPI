@@ -12,6 +12,7 @@ let x = setInterval(function() {
  UpdateJSON(start);
  UpdatedataJSON(start);
  UpdateSolar(start);
+ UpdateSun(start);
  
  }
 ,3000 )
@@ -136,6 +137,28 @@ function UpdateSolar(start) {
 
 }
    
+
+function UpdateSun(start) {
+  //Create the XHR Object
+  let xhr = new XMLHttpRequest;
+  //Call the open function, GET-type of request, url, true-asynchronous
+  xhr.open('GET', '../public/api/suncontroller/' + start, true)
+  //call the onload 
+  xhr.onload = function () {
+    //check if the status is 200(means everything is okay)
+    if (this.status === 200) {
+
+      let Sunnyness = new StatsViewer();
+      console.log(Sunnyness.FormatedSunHtml(this.responseText));
+
+      //return server response as an object with JSON.parse
+   
+    }
+  }
+  //call send
+  xhr.send();
+
+}
 
    function UpdateLinceCharts(ResponceText){
     let responceobj = JSON.parse(ResponceText);
