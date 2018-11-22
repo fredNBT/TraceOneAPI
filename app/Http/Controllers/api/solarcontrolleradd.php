@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use DB;
 
-class solarcontroller extends Controller
+class solarcontrolleradd extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -68,8 +68,8 @@ class solarcontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        echo  "UPDATE [SolarPanels] SET SolarPannels = SolarPannels - 1 WHERE House='".$id."'";
-        $Sun = DB::update( "UPDATE [SolarPanels] SET SolarPannels = SolarPannels - 1 WHERE House='" . $id. "'");
+        echo  "UPDATE [SolarPanels] SET SolarPannels = SolarPannels + 1 WHERE House='".$id."'";
+        $Sun = DB::update( "UPDATE [SolarPanels] SET SolarPannels = SolarPannels + 1 WHERE House='" . $id. "'");
         return 'steve';
     }
 

@@ -151,7 +151,29 @@ function UpdateLinceCharts(ResponceText) {
 
 
 function MinusSolarPanel(val){
- 
+ $.ajax({
+   method:'POST',
+   url:'../public/api/solarcontroller/'+val,
+   success:function(data){
+    console.log('made it');
+    console.log(data);
+   },
+   headers: {
+    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+}
 
-  console.log(val);
+function AddSolarPanel(val){
+  $.ajax({
+    method:'POST',
+    url:'../public/api/solarcontrolleradd/'+val,
+    success:function(data){
+     console.log('solar Add');
+     console.log(data);
+    },
+    headers: {
+     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+ }
+
+ })
+
 }

@@ -60,7 +60,7 @@ class StatsViewer {
                 
                 
                 if (index === 'House'){
-                    TextToReturn += '<button style="color:white; background-color: Transparent;" onclick="MinusSolarPanel(this.value)" value=" ' + value+  ' " >-</button>'
+                    TextToReturn += '<button style="color:white; background-color: Transparent;" onclick="MinusSolarPanel(this.value)"value="' + value+  '">-</button>'
                 TextToReturn += '<p style="padding-right: 20px;color:  #6B6F73;">' + value + '</p>';
                 }
 

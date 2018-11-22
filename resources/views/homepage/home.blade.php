@@ -76,6 +76,7 @@
     <script src="{{ asset('js/sigma.js-1.2.1/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edges.dotted.js') }}"></script>
     
     <script src="{{ asset('js/circles.js') }}"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     
     
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
