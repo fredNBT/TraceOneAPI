@@ -156,10 +156,7 @@
       </div>
     </div>
 
-
-
-
-
+    <div id="SolarStats" class="SolarStats" style="color: white;"></div>
 
 
 </body>

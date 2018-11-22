@@ -25,7 +25,7 @@ class AlgoController extends Controller
    
      $old = getcwd(); // Save the current directory
     chdir("../public/js");
-    $file = 'data1.json';
+    $file = 'data.json';
     unlink($file);
     file_put_contents($file,$jsondata);
     chdir($old); // Restore the old working directory 
