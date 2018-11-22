@@ -14,7 +14,7 @@ class SigmaJsSchemaController extends Controller
     public function show($time)
     {
 
-      $CurrentPowerUsage = new \App\Classes\PowerUsage();
+       $CurrentPowerUsage = new \App\Classes\PowerUsage();
 
       $ShortestPath = new \App\Classes\ShortestPath();
   
@@ -30,7 +30,8 @@ class SigmaJsSchemaController extends Controller
       $file = 'data.json';
       unlink($file);
       file_put_contents($file,$jsondata);
-      chdir($old); // Restore the old working directory 
+      chdir($old); // Restore the old working directory  */
+
         
       return $pricearray;
     

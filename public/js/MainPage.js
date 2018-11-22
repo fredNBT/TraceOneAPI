@@ -10,7 +10,8 @@ let x = setInterval(function() {
  checkminute();
  checkhour();
  UpdateJSON(start);
- UpdatedataJSON(start); 
+ UpdatedataJSON(start);
+ UpdateSolar(start);
  
  }
 ,3000 )
@@ -105,14 +106,35 @@ let xhr = new XMLHttpRequest;
                    {
                      console.log(this.responseText);
                      document.getElementById("pricearray").innerHTML=this.responseText;
-
-   
            } 
                    }
        //call send
        xhr.send();
    
        } 
+
+      
+function UpdateSolar(start) {
+  //Create the XHR Object
+  let xhr = new XMLHttpRequest;
+  //Call the open function, GET-type of request, url, true-asynchronous
+  xhr.open('GET', '../public/api/solarcontroller/' + start, true)
+  //call the onload 
+  xhr.onload = function () {
+    //check if the status is 200(means everything is okay)
+    if (this.status === 200) {
+
+      //return server response as an object with JSON.parse
+      let stats = document.getElementById('SolarStats');
+
+      let StatsView2 = new StatsViewer();
+      stats.innerHTML = StatsView2.FormatedSolarHtml(this.responseText);
+    }
+  }
+  //call send
+  xhr.send();
+
+}
    
 
    function UpdateLinceCharts(ResponceText){
@@ -135,8 +157,33 @@ let xhr = new XMLHttpRequest;
     }
     )}
 
-     setTimeout(function(){
-      console.log("reload");
-      location.reload();
-   }, 5000); 
   
+    function MinusSolarPanel(val){
+      $.ajax({
+        method:'POST',
+        url:'../public/api/solarcontroller/'+val,
+        success:function(data){
+         console.log('made it');
+         console.log(data);
+        },
+        headers: {
+         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+     }
+      })
+     
+     }
+     
+     function PlusSolarPanel(val){
+       $.ajax({
+         method:'POST',
+         url:'../public/api/solarcontrolleradd/'+val,
+         success:function(data){
+          console.log('Add Solar Panel');
+          console.log(data);
+         },
+         headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+       })
+      
+      }

@@ -43,7 +43,7 @@ class StatsViewer {
     }
 
     FormatedSolarHtml(ResponceText){
-        let TextToReturn = '<div class="Solar">';
+        let TextToReturn = '<h4>Solar Panels</h4><div class="Solar">';
 
 
         let responceobj = JSON.parse(ResponceText);
@@ -54,29 +54,27 @@ class StatsViewer {
           //  TextToReturn = '<div class="SolarBoxes" style="display:flex;" >';
             
           TextToReturn += '<div class="SolarBoxes" style="display:flex;  margin:10px;" >';
-          TextToReturn += '<button>+</button>'
-            $.each(value, function (index, value, ) {
-
-                
+            $.each(value, function (index, value, ) {    
                 
                 if (index === 'House'){
-                TextToReturn += '<p>' + value + '</p>';
+                    TextToReturn += '<button style="color:white; background-color: Transparent;" onclick="MinusSolarPanel(this.value)"value="' + value+  '">-</button>';
+                    TextToReturn += '<button style="color:white; background-color: Transparent;"onclick="PlusSolarPanel(this.value)"value="' + value+  '" >+</button>';
+                TextToReturn += '<p style="padding-right: 20px;color:  #6B6F73;">' + value + '</p>';
                 }
 
                 if (index === 'SolarPannels'){
-                    TextToReturn += '<p>' + value + '</p>';
+                    TextToReturn += '<p style="color: #38AF08;">' + value + '</p>';
                     }
+                   
+                   
                
             });
-            TextToReturn += '<button>-</button>'
+           
             TextToReturn += ' </div>';
            
           //  TextToReturn += ' </div>';
-           
-         
+                 
         });
-
-
         
         TextToReturn += ' </div>';
 

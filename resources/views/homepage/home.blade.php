@@ -77,6 +77,7 @@
     <script src="{{ asset('js/sigma.js-1.2.1/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edges.dotted.js') }}"></script>
     
     <script src="{{ asset('js/circles.js') }}"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     
     
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
@@ -144,7 +145,6 @@
     </div>
     </div>
 
-
     <div class="linecontainer">
       <div class="linegraphborder1">
         <div id="Chart4" class="LineChart" >chart 4</div>
@@ -156,7 +156,7 @@
         <div id="Chart6" class="LineChart" >chart 6</div>
       </div>
     </div>
-
+    <div id="SolarStats" class="SolarStats" style="color: white;"></div>
 
 
 <div id="pricearray" style="background-color:red"></div>
