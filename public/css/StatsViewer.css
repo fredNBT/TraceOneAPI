@@ -1,0 +1,26 @@
+.stats{
+
+    width: 50vw;
+    
+
+}
+
+.Combo{
+ 
+    width: 20%
+    display: flex;
+}
+
+h3{
+    text-align: center;
+}
+
+.Pos{
+    text-align: center;
+    color: green;
+}
+
+.Neg{
+    text-align: center;
+    color: red;
+}
