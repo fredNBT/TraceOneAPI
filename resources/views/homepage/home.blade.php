@@ -251,7 +251,7 @@
 
       <img class="cgpslogo" src="{{ asset('/img/cgpsLogo.svg') }}" alt="">
 
-      <div id="weather" style="width:20%; height:100%; "></div>
+      <div id="weather" style="width:22%; height:100%; "></div>
      
       
       
@@ -318,16 +318,17 @@
       </div>
     </div>
     
-    <div id="SolarStats" class="SolarStats">
+    
     
         <div class="clock">
             <div class="timer" id="timer"></div>
             <img id="pause" class="pause" src="{{ asset('/img/pause.svg') }}" alt=""onclick="Pause();switchpause()">
             <img id="play"  class="play" src="{{ asset('/img/play.svg') }}" alt=""onclick="Turtle();switchplay()">
             <img id="speed" class="speed" src="{{ asset('/img/speed.svg') }}" alt=""onclick="Cheeter();switchspeed()">
+            <div id="SolarStats" class="SolarStats"></div>
           </div>
     
-    </div>
+    
   </div>
 
 <div id="pricearray" style="background-color:red"></div>
