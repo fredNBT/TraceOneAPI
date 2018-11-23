@@ -65,7 +65,7 @@ sigma.classes.graph.addMethod('neighbors', function(nodeId) {
 });
 
 sigma.parsers.json(
-'js/data.json',
+'js/data1.json',
   { // Here is the ID of the DOM element that
     // will contain the graph:
     renderer: {
@@ -87,9 +87,7 @@ sigma.parsers.json(
     }
   },
   function(s) {
-    s.graph.nodes().forEach(function(n){
-      n.type = 'house'
-    });
+
     // We first need to save the original colors of our
     // nodes and edges, like this:
     s.graph.nodes().forEach(function(n) {

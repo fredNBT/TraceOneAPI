@@ -96,11 +96,13 @@
   </head>
   <body >
 
+      
+
       <div class="content">
           <div class="container wow fadeInUp delay-03s">
             <div class="row">
               <div class="logo text-center">
-                <h2>We Are Baking Something New!! Comming Soon<br>Closed Grid Power System</h2>
+                <h2>We Are Baking Something New!!<br> Coming Soon<br>Closed Grid Power System</h2>
               </div>
       
               <div id="countdown" data-wow-delay=".3s" data-date="Dec 26, 2016 06:00:00"></div>
@@ -320,9 +322,9 @@
     
         <div class="clock">
             <div class="timer" id="timer"></div>
-            <img class="pause" src="{{ asset('/img/pause.svg') }}" alt=""onclick="Pause()">
-            <img class="play" src="{{ asset('/img/play.svg') }}" alt=""onclick="Turtle()">
-            <img class="speed" src="{{ asset('/img/speed.svg') }}" alt=""onclick="Cheeter()">
+            <img id="pause" class="pause" src="{{ asset('/img/pause.svg') }}" alt=""onclick="Pause();switchpause()">
+            <img id="play"  class="play" src="{{ asset('/img/play.svg') }}" alt=""onclick="Turtle();switchplay()">
+            <img id="speed" class="speed" src="{{ asset('/img/speed.svg') }}" alt=""onclick="Cheeter();switchspeed()">
           </div>
     
     </div>
@@ -334,6 +336,9 @@
 
 </body>
   {{-- js entry Point --}}
+
+  <script src="{{ asset('js/buttonhandler.js') }}"></script>
+
   <script src="{{ asset('js/createCircles.js') }}"></script>
   <script src="{{ asset('js/script.js') }}"></script>
   <script src="https://code.highcharts.com/highcharts.src.js"></script>

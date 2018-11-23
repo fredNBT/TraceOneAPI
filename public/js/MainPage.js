@@ -228,7 +228,7 @@ function UpdateSun(start) {
          MinSpeed = 60;
          HourSpeed = 5;
          x.setInterval = 3000;
-         myTimer = setInterval(myFn, 4000);
+         myTimer = setInterval(4000);
 
       }
 
