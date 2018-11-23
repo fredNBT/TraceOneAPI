@@ -82,6 +82,8 @@
     
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
+
+    <script src="{{ asset('js/StatsViewer.js') }}"></script>
     
 
     
@@ -331,7 +333,7 @@
     
   </div>
 
-<div id="pricearray" style="background-color:red"></div>
+<div id="pricearray" ></div>
 
 
 
@@ -344,7 +346,7 @@
   <script src="{{ asset('js/script.js') }}"></script>
   <script src="https://code.highcharts.com/highcharts.src.js"></script>
   <script src="{{ asset('js/HighCharts.js') }}"></script>
-  <script src="{{ asset('js/StatsViewer.js') }}"></script>
+
 <script src="{{ asset('js/MainPage.js') }}"></script>
 {{-- js entry Point --}}
 <script src="{{ asset('js/jquery.min.js') }}"></script>

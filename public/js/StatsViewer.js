@@ -89,6 +89,31 @@ class StatsViewer {
 
     }
 
+    FormatedPriceHtml(ResponceText) {
+        let TextToReturn = '';
+        let responceobj = JSON.parse(ResponceText);
+        let i = 1;
+
+        $.each(responceobj, function (index, value, ) {
+
+            
+            TextToReturn += '<div ><h3> House' + i + '</h3>';
+            i +=1;
+           
+            $.each(value, function (index, value, ) {
+               
+             TextToReturn += '<div><p style="padding:1px">' + index + '</p>' + '<p style="padding:1px">' + value + '</p></div>';
+            });
+
+            TextToReturn += '</div>'
+        
+        });
+
+     
+        return TextToReturn;
+
+    }
+
 
 
 

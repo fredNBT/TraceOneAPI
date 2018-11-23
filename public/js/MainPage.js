@@ -117,7 +117,15 @@ let xhr = new XMLHttpRequest;
                if (this.status === 200) 
                    {
                      console.log(this.responseText);
-                     document.getElementById("pricearray").innerHTML=this.responseText;
+
+                     let PriceHolder = document.getElementById("pricearray")
+
+                     let DataStats = new StatsViewer();
+
+                     PriceHolder.innerHTML = DataStats.FormatedPriceHtml(this.responseText)
+
+                     
+                    // document.getElementById("pricearray").innerHTML=this.responseText;
            } 
                    }
        //call send
@@ -172,6 +180,8 @@ function UpdateSun(start) {
   xhr.send();
 
 }
+
+
 
    function UpdateLinceCharts(ResponceText){
     let responceobj = JSON.parse(ResponceText);
